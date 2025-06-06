@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Actitud Fitness Durazno</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      /* Animaciones fade-slide */
+      .fade-slide {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+      }
+      .fade-slide.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      /* Estilos botón hamburguesa */
+      .hamburger-icon span {
+        display: block;
+        width: 24px;
+        height: 3px;
+        background-color: #f1f5f9;
+        margin: 5px 0;
+        transition: all 0.3s ease-in-out;
+      }
+      .hamburger-icon.open span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+      }
+      .hamburger-icon.open span:nth-child(2) {
+        opacity: 0;
+      }
+      .hamburger-icon.open span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+      }
+    </style>
+  </head>
+  <body class="bg-[#0F172A] text-[#F1F5F9] font-sans">
+    <!-- Header -->
+    <header
+      class="fixed top-0 left-0 w-full bg-[#0F172A]/80 backdrop-blur z-50 border-b border-white/10"
+    >
+      <div
+        class="max-w-6xl mx-auto flex items-center justify-between px-4 py-4"
+      >
+        <a href="./index.html"
+          ><img
+            src="assets/Logo.svg"
+            alt="Logotipo de Actitud Fitness Durazno"
+            class="h-12 w-auto"
+        /></a>
+        <nav class="hidden md:flex space-x-6">
+          <a href="#inicio" class="hover:text-[#E11D48] transition-colors"
+            >Inicio</a
+          >
+          <a
+            href="./sobrenosotros.html"
+            class="hover:text-[#E11D48] transition-colors"
+            >Nosotros</a
+          >
+          <a href="#servicios" class="hover:text-[#E11D48] transition-colors"
+            >Servicios</a
+          >
+          <a href="#clases" class="hover:text-[#E11D48] transition-colors"
+            >Clases</a
+          >
+          <a
+            href="#instalaciones"
+            class="hover:text-[#E11D48] transition-colors"
+            >Instalaciones</a
+          >
+          <a href="#ubicacion" class="hover:text-[#E11D48] transition-colors"
+            >Ubicación</a
+          >
+          <a href="#contacto" class="hover:text-[#E11D48] transition-colors"
+            >Contacto</a
+          >
+        </nav>
+        <button
+          id="hamburgerButton"
+          class="md:hidden focus:outline-none"
+          aria-label="Abrir menú"
+        >
+          <div class="hamburger-icon" id="hamburgerIcon">
+            <span></span><span></span><span></span>
+          </div>
+        </button>
+      </div>
+      <nav
+        id="mobileMenu"
+        class="hidden md:hidden bg-[#0F172A]/90 border-t border-white/10 pb-4"
+      >
+        <ul class="flex flex-col items-center space-y-4 py-2">
+          <li>
+            <a
+              href="#inicio"
+              class="text-lg hover:text-[#E11D48] transition-colors"
+              onclick="closeMobileMenu()"
+              >Inicio</a
+            >
+          </li>
+          <li>
+            <a
+              href="/sobrenosotros.html"
+              class="text-lg hover:text-[#E11D48] transition-colors"
+              onclick="closeMobileMenu()"
+              >Nosotros</a
+            >
+          </li>
+          <li>
+            <a
+              href="#servicios"
+              class="text-lg hover:text-[#E11D48] transition-colors"
+              onclick="closeMobileMenu()"
+              >Servicios</a
+            >
+          </li>
+          <li>
+            <a
+              href="#clases"
+              class="text-lg hover:text-[#E11D48] transition-colors"
+              onclick="closeMobileMenu()"
+              >Clases</a
+            >
+          </li>
+          <li>
+            <a
+              href="#instalaciones"
+              class="text-lg hover:text-[#E11D48] transition-colors"
+              onclick="closeMobileMenu()"
+              >Instalaciones</a
+            >
+          </li>
+          <li>
+            <a
+              href="#ubicacion"
+              class="text-lg hover:text-[#E11D48] transition-colors"
+              onclick="closeMobileMenu()"
+              >Ubicación</a
+            >
+          </li>
+          <li>
+            <a
+              href="#contacto"
+              class="text-lg hover:text-[#E11D48] transition-colors"
+              onclick="closeMobileMenu()"
+              >Contacto</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+  <!-- Hero -->
+<section id="inicio" class="pt-32 pb-20 px-6 text-center relative overflow-hidden">
+    <!-- Imagen de fondo -->
+    <img
+      src="assets/HeroBG.webp"
+      alt="Personas entrenando en gimnasio moderno"
+      class="absolute inset-0 w-full h-full object-cover object-center"
+      style="z-index: 1;"
+    />
+    <!-- Overlay -->
+    <div class="absolute inset-0 bg-black/70" style="z-index: 2;"></div>
+    
+    <!-- Contenido hero -->
+    <div class="relative z-10">
+      <h2 class="text-4xl sm:text-5xl font-bold mb-4 fade-slide">
+        Entrená sin excusas
+      </h2>
+      <p class="text-slate-300 text-lg mb-6 fade-slide">
+        Descubrí el verdadero poder del cuerpo y la mente en un ambiente motivador.
+      </p>
+      <a
+        href="#servicios"
+        class="bg-[#E11D48] hover:bg-rose-700 text-white py-2 px-6 rounded-xl transition-all fade-slide"
+        >Ver Servicios</a
+      >
+    </div>
+  </section>
+  
+
+      <!-- Precios de planes -->
+      <div class="mt-12 mb-10 flex flex-col items-center sm:flex-row sm:justify-center gap-8 fade-slide relative z-10 show">
+        <!-- Card Pase Libre Lun-Vie -->
+        <div class="bg-slate-800/90 border border-emerald-500/20 hover:border-emerald-400 rounded-2xl p-8 shadow-lg hover:shadow-emerald-700/30 transition-all duration-300 w-full max-w-sm flex flex-col hover:scale-[1.03] group">
+          <div class="flex items-center gap-2 mb-2">
+            <!-- Icono calendario -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><rect width="18" height="14" x="3" y="5" rx="2"/><path d="M8 2v4"/><path d="M16 2v4"/><path d="M3 10h18"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/></svg>
+            <h3 class="text-xl font-semibold text-white">Pase Libre Lun-Vie</h3>
+            <span class="ml-2 bg-emerald-600/80 text-white text-xs font-bold px-3 py-1 rounded-full">Más Elegido</span>
+          </div>
+          <p class="text-slate-300 mb-2">Acceso ilimitado <b>de lunes a viernes</b></p>
+          <p class="text-slate-400 mb-2 text-sm">Entrená todos los días por menos de <b>$65/día</b>.</p>
+          <p class="text-3xl font-bold text-[#E11D48] mb-4">$1300 <span class="text-base font-medium text-slate-400">/ mes</span></p>
+          <ul class="text-sm text-slate-300 mb-6 space-y-2 text-left">
+            <li class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="m5 13 4 4L19 7"/></svg>
+              Pase libre todos los días hábiles
+            </li>
+            <li class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="m5 13 4 4L19 7"/></svg>
+              Sin límite de horas
+            </li>
+            <li class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="m5 13 4 4L19 7"/></svg>
+              Acceso a todas las áreas
+            </li>
+          </ul>
+          <a href="#contacto" class="block bg-rose-600 hover:bg-rose-700 text-white font-semibold py-2 px-4 rounded-lg transition-all text-center mt-auto flex items-center justify-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M16 21v-2a4 4 0 0 0-4-4 4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            Sumate hoy
+          </a>
+        </div>
+        <!-- Card 3 Veces por Semana -->
+        <div class="bg-slate-800/90 border border-sky-500/20 hover:border-sky-400 rounded-2xl p-8 shadow-lg hover:shadow-sky-600/20 transition-all duration-300 w-full max-w-sm flex flex-col hover:scale-[1.03] group">
+          <div class="flex items-center gap-2 mb-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-sky-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            <h3 class="text-xl font-semibold text-white">3 Veces por Semana</h3>
+            <span class="ml-2 bg-sky-600/80 text-white text-xs font-bold px-3 py-1 rounded-full">Flexible</span>
+          </div>
+          <p class="text-slate-300 mb-2">Entrená cualquier <b>3 días a elección</b> por semana</p>
+          <p class="text-slate-400 mb-2 text-sm">Ahorra $100 al mes si no venís todos los días.</p>
+          <p class="text-3xl font-bold text-[#E11D48] mb-4">$1200 <span class="text-base font-medium text-slate-400">/ mes</span></p>
+          <ul class="text-sm text-slate-300 mb-6 space-y-2 text-left">
+            <li class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-sky-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="m5 13 4 4L19 7"/></svg>
+              Elegí los días que más te convengan
+            </li>
+            <li class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-sky-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="m5 13 4 4L19 7"/></svg>
+              Ideal si entrenás por otras actividades
+            </li>
+            <li class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-sky-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="m5 13 4 4L19 7"/></svg>
+              Acceso completo en cada visita
+            </li>
+          </ul>
+          <a href="#contacto" class="block bg-rose-600 hover:bg-rose-700 text-white font-semibold py-2 px-4 rounded-lg transition-all text-center mt-auto flex items-center justify-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M13 16v5a1 1 0 0 0 2 0v-5"/><circle cx="12" cy="7" r="4"/></svg>
+            Probar ahora
+          </a>
+        </div>
+        <!-- Card Pase Diario -->
+        <div class="bg-slate-800/90 border border-yellow-400/20 hover:border-yellow-300 rounded-2xl p-8 shadow-lg hover:shadow-yellow-700/20 transition-all duration-300 w-full max-w-sm flex flex-col hover:scale-[1.03] group">
+          <div class="flex items-center gap-2 mb-2">
+            <!-- Icono pase diario/usuario -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-yellow-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><circle cx="12" cy="12" r="10"/><path d="M15 12h.01"/><path d="M9 12h.01"/></svg>
+            <h3 class="text-xl font-semibold text-white">Pase Diario</h3>
+            <span class="ml-2 bg-yellow-500/80 text-slate-900 text-xs font-bold px-3 py-1 rounded-full">Ideal Viajeros</span>
+          </div>
+          <p class="text-slate-300 mb-2">Entrená cualquier día, <b>sin compromiso mensual</b></p>
+          <p class="text-slate-400 mb-2 text-sm">¡Pagás sólo el día que venís, sin límite de horas!</p>
+          <p class="text-3xl font-bold text-[#E11D48] mb-4">$200 <span class="text-base font-medium text-slate-400">/ día</span></p>
+          <ul class="text-sm text-slate-300 mb-6 space-y-2 text-left">
+            <li class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-yellow-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="m5 13 4 4L19 7"/></svg>
+              Entrená el tiempo que quieras
+            </li>
+            <li class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-yellow-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="m5 13 4 4L19 7"/></svg>
+              Perfecto para quienes están de paso
+            </li>
+            <li class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-yellow-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="m5 13 4 4L19 7"/></svg>
+              Sin cuota de inscripción
+            </li>
+          </ul>
+          <a href="#contacto" class="block bg-rose-600 hover:bg-rose-700 text-white font-semibold py-2 px-4 rounded-lg transition-all text-center mt-auto flex items-center justify-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M13 16v5a1 1 0 0 0 2 0v-5"/><circle cx="12" cy="7" r="4"/></svg>
+            Consultar disponibilidad
+          </a>
+        </div>
+      </div>
+      
+      
+      
+    </section>
+
+    
+<!-- Horarios del gimnasio -->
+<div class="max-w-2xl mx-auto mt-0 mb-12 fade-slide relative z-10">
+    <h3 class="text-3xl text-center font-semibold mb-4 text-white">Horarios</h3>
+    <div class="overflow-x-auto w-[85%] max-w-sm mx-auto border-2 border-slate-400/50 rounded-2xl shadow-lg">
+      <table class="min-w-full text-left text-slate-200 bg-[#1E293B] overflow-hidden rounded-2xl">
+        <thead class="bg-slate-800/60">
+          <tr>
+            <th class="py-3 px-4 font-bold">Día</th>
+            <th class="py-3 px-4 font-bold">Horario</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Abierto -->
+          <tr class="border-t border-white/5">
+            <td class="py-3 px-4">Lunes a Viernes</td>
+            <td class="py-3 px-4">
+              <span class="inline-block bg-green-500/20 text-green-400 font-semibold rounded-full px-3 py-1">
+                14&nbsp;a&nbsp;22&nbsp;horas
+              </span>
+            </td>
+          </tr>
+          <!-- Cerrado -->
+          <tr class="border-t border-white/5">
+            <td class="py-3 px-4">Sábados</td>
+            <td class="py-3 px-4">
+              <span class="inline-block bg-[#E11D48]/20 text-[#E11D48] font-semibold rounded-full px-3 py-1">
+                Cerrado
+              </span>
+            </td>
+          </tr>
+          <tr class="border-t border-white/5">
+            <td class="py-3 px-4">Domingos</td>
+            <td class="py-3 px-4">
+              <span class="inline-block bg-[#E11D48]/20 text-[#E11D48] font-semibold rounded-full px-3 py-1">
+                Cerrado
+              </span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
+
+ <!-- Sobre Nosotros -->
+<section id="nosotros" class="py-20 px-4 bg-slate-800 fade-slide">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-bold text-center text-white mb-10">
+        Sobre <span class="text-emerald-400">Nosotros</span>
+      </h2>
+      <div class="flex flex-col md:flex-row items-center md:items-start gap-10 md:gap-14 mb-12">
+        <!-- Imagen -->
+        <div class="flex-shrink-0 w-full md:w-[380px] xl:w-[420px] flex justify-center">
+          <img
+            src="./Maquinaria/Imagen de WhatsApp 2025-06-05 a las 00.04.42_02e51b2a.jpg"
+            alt="Fundador entrenando de joven en gimnasio"
+            class="rounded-2xl object-cover w-full max-w-[420px] aspect-video md:aspect-[4/3] shadow-xl"
+          />
+        </div>
+        <!-- Contenido principal -->
+        <div class="flex-1 w-full space-y-4">
+          <div class="flex items-start gap-3 py-2">
+            <!-- Shield-Check -->
+            <span class="mt-0.5 flex-shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M12 22c7-3 7-7 7-13V5l-7-3-7 3v4c0 6 0 10 7 13Z"/><path d="m9 12 2 2 4-4"/></svg>
+            </span>
+            <span class="text-slate-200 text-base leading-snug">
+              En Actitud Fitness Durazno creemos que cada persona puede superar sus límites.
+              Nuestro gimnasio está <span class="text-[#E11D48] font-semibold">habilitado por la IDD</span>
+              con todas las medidas de seguridad y calidad.
+            </span>
+          </div>
+          <div class="flex items-start gap-3 py-2">
+            <!-- Dumbbell -->
+            <span class="mt-0.5 flex-shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M6.5 6.5 4 9m13.5-2.5L20 9"/><path d="M6.5 17.5 4 15m13.5 2.5L20 15"/><path d="M9 17V7"/><path d="M15 17V7"/><rect width="4" height="4" x="10" y="10" rx="1"/></svg>
+            </span>
+            <span class="text-slate-200 text-base leading-snug">
+              Ofrecemos un espacio profesional, con más de <span class="text-[#E11D48] font-semibold">200 kg de discos olímpicos</span>
+              y <span class="text-[#E11D48] font-semibold">barras</span>, una pista funcional y equipamiento variado para entrenar al máximo.
+            </span>
+          </div>
+          <div class="flex items-start gap-3 py-2">
+            <!-- Award -->
+            <span class="mt-0.5 flex-shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><circle cx="12" cy="8" r="6"/><path d="M8.5 14.5 7 21l5-3 5 3-1.5-6.5"/></svg>
+            </span>
+            <span class="text-slate-200 text-base leading-snug">
+              Nuestro fundador, Rafael Barragan, comenzó a los 18 años entrenando en condiciones adversas.
+              Con pasión y disciplina, superó obstáculos y fundó este espacio para compartir su experiencia.
+              <span class="block sm:inline">¡Hoy, queremos que vos también formes parte de esta comunidad!</span>
+            </span>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Cards -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 text-left">
+        <div class="relative bg-white/5 p-6 rounded-2xl border border-white/10 shadow hover:shadow-lg transition">
+          <!-- Target icono -->
+          <span class="absolute -top-7 left-7 bg-emerald-500 text-white rounded-full shadow-lg flex items-center justify-center w-12 h-12">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+          </span>
+          <h3 class="text-xl font-semibold text-white mb-2 mt-8">Nuestra Filosofía</h3>
+          <p class="text-slate-300 leading-normal">
+            Mejora constante y respeto. Formamos personas fuertes en cuerpo y mente, combinando disciplinas de alta intensidad y técnica precisa.
+          </p>
+        </div>
+        <div class="relative bg-white/5 p-6 rounded-2xl border border-white/10 shadow hover:shadow-lg transition">
+          <!-- Users icono -->
+          <span class="absolute -top-7 left-7 bg-emerald-500 text-white rounded-full shadow-lg flex items-center justify-center w-12 h-12">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M7 21v-2a4 4 0 0 1 4-4 4 4 0 0 1 4 4v2"/><circle cx="12" cy="7" r="4"/><path d="M3 21v-2a4 4 0 0 1 3-3.87"/><path d="M17 21v-2a4 4 0 0 0-3-3.87"/></svg>
+          </span>
+          <h3 class="text-xl font-semibold text-white mb-2 mt-8">Entrená en Comunidad</h3>
+          <p class="text-slate-300 leading-normal">
+            Somos una familia que se apoya. Valoramos el compañerismo y la constancia. Cada clase y cada rincón de nuestro gimnasio refleja pasión y dedicación.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+    <!-- Servicios -->
+  <!-- Servicios -->
+<section id="servicios" class="py-20 px-4 fade-slide">
+    <div class="max-w-5xl mx-auto text-center">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-slate-100">
+        Servicios
+      </h2>
+      <p class="text-slate-300 mb-10 max-w-3xl mx-auto">
+        Te ofrecemos opciones personalizadas para cada necesidad. Descubrí cómo podemos ayudarte:
+      </p>
+      <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-8 text-left">
+        <!-- Card 1: Personalizado -->
+        <div class="relative bg-slate-800/95 rounded-2xl p-0 shadow-xl group hover:scale-105 hover:shadow-emerald-700/30 transition max-w-xs sm:max-w-none mx-auto">
+          <span class="absolute top-4 left-4 bg-emerald-500/90 rounded-full p-2 shadow-lg z-10">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M12 15v-6"/><path d="M9 12h6"/><circle cx="12" cy="12" r="10"/></svg>
+          </span>
+          <img
+            src="./assets/Servicios/Personalizada.webp"
+            alt="Entrenamiento Personalizado"
+            class="w-full rounded-t-2xl object-cover h-48 lg:h-64"
+          />
+          <div class="p-6 flex flex-col gap-4">
+            <div>
+              <h3 class="text-lg font-semibold text-white mb-1">Entrenamiento Personalizado</h3>
+              <p class="text-slate-300 text-sm">
+                Rutina exclusiva para vos, ajustada a tu nivel y objetivos.
+              </p>
+            </div>
+            <a
+              href="https://wa.me/59896401296?text=Hola,%20estoy%20interesado%20en%20Entrenamiento%20Personalizado."
+              target="_blank"
+              class="inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-slate-900 font-semibold rounded-full px-5 py-2 mt-2 transition-shadow shadow hover:shadow-lg"
+              aria-label="Solicitar Entrenamiento Personalizado por WhatsApp"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M22 16.92V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h2.09a2 2 0 0 1 1.41.59l2.83 2.83a2 2 0 0 0 1.41.59H19a2 2 0 0 1 2 2v1.08"/><path d="M19 16v-6"/><path d="M16 13h6"/></svg>
+              Solicitar
+            </a>
+          </div>
+        </div>
+        <!-- Card 2: Semi-Personalizado -->
+        <div class="relative bg-slate-800/95 rounded-2xl p-0 shadow-xl group hover:scale-105 hover:shadow-indigo-700/30 transition max-w-xs sm:max-w-none mx-auto">
+          <span class="absolute top-4 left-4 bg-indigo-500/90 rounded-full p-2 shadow-lg z-10">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M17 21v-2a4 4 0 0 0-4-4 4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/><path d="M3 21v-2a4 4 0 0 1 3-3.87"/><path d="M21 21v-2a4 4 0 0 0-3-3.87"/></svg>
+          </span>
+          <img
+            src="./assets/Servicios/Semi-personalizado.webp"
+            alt="Entrenamiento Semi-Personalizado"
+            class="w-full rounded-t-2xl object-cover h-48 lg:h-64"
+          />
+          <div class="p-6 flex flex-col gap-4">
+            <div>
+              <h3 class="text-lg font-semibold text-white mb-1">Entrenamiento Semi-Personalizado</h3>
+              <p class="text-slate-300 text-sm">
+                Pequeños grupos guiados para motivarte y mejorar con supervisión.
+              </p>
+            </div>
+            <a
+              href="https://wa.me/59896401296?text=Hola,%20estoy%20interesado%20en%20Entrenamiento%20Semi-Personalizado."
+              target="_blank"
+              class="inline-flex items-center gap-2 bg-indigo-500 hover:bg-indigo-600 text-white font-semibold rounded-full px-5 py-2 mt-2 transition-shadow shadow hover:shadow-lg"
+              aria-label="Solicitar Entrenamiento Semi-Personalizado por WhatsApp"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M22 16.92V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h2.09a2 2 0 0 1 1.41.59l2.83 2.83a2 2 0 0 0 1.41.59H19a2 2 0 0 1 2 2v1.08"/><path d="M19 16v-6"/><path d="M16 13h6"/></svg>
+              Solicitar
+            </a>
+          </div>
+        </div>
+        <!-- Card 3: A Distancia -->
+        <div class="relative bg-slate-800/95 rounded-2xl p-0 shadow-xl group hover:scale-105 hover:shadow-pink-700/30 transition max-w-xs sm:max-w-none mx-auto">
+          <span class="absolute top-4 left-4 bg-pink-500/90 rounded-full p-2 shadow-lg z-10">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M20 8v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8"/><path d="m2 8 10 6 10-6"/><rect width="20" height="14" x="2" y="6" rx="2"/></svg>
+          </span>
+          <img
+            src="./assets/Servicios/Entrenamieno-a-distancia.webp"
+            alt="Entrenamiento a Distancia"
+            class="w-full rounded-t-2xl object-cover h-48 lg:h-64"
+          />
+          <div class="p-6 flex flex-col gap-4">
+            <div>
+              <h3 class="text-lg font-semibold text-white mb-1">Entrenamiento a Distancia</h3>
+              <p class="text-slate-300 text-sm">
+                Seguimiento online con rutinas y planes nutricionales.
+              </p>
+            </div>
+            <a
+              href="https://wa.me/59896401296?text=Hola,%20estoy%20interesado%20en%20Entrenamiento%20a%20Distancia."
+              target="_blank"
+              class="inline-flex items-center gap-2 bg-pink-500 hover:bg-pink-600 text-white font-semibold rounded-full px-5 py-2 mt-2 transition-shadow shadow hover:shadow-lg"
+              aria-label="Solicitar Entrenamiento a Distancia por WhatsApp"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M22 16.92V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h2.09a2 2 0 0 1 1.41.59l2.83 2.83a2 2 0 0 0 1.41.59H19a2 2 0 0 1 2 2v1.08"/><path d="M19 16v-6"/><path d="M16 13h6"/></svg>
+              Solicitar
+            </a>
+          </div>
+        </div>
+        <!-- Card 4: Instituto -->
+        <div class="relative bg-slate-800/95 rounded-2xl p-0 shadow-xl group hover:scale-105 hover:shadow-yellow-700/30 transition max-w-xs sm:max-w-none mx-auto">
+          <span class="absolute top-4 left-4 bg-yellow-400/90 rounded-full p-2 shadow-lg z-10">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-slate-900" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M4 7V5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v2"/><rect width="16" height="12" x="4" y="7" rx="2"/><path d="M8 11h8"/><path d="M8 15h6"/></svg>
+          </span>
+          <img
+            src="./assets/Servicios/FIttnes2.webp"
+            alt="Instituto de Formación Fitness"
+            class="w-full rounded-t-2xl object-cover h-48 lg:h-64"
+          />
+          <div class="p-6 flex flex-col gap-4">
+            <div>
+              <h3 class="text-lg font-semibold text-white mb-1">Instituto de Formación Fitness</h3>
+              <p class="text-slate-300 text-sm">
+                Cursos y certificaciones para futuros entrenadores.
+              </p>
+            </div>
+            <a
+              href="https://wa.me/59896401296?text=Hola,%20estoy%20interesado%20en%20el%20Instituto%20de%20Formaci%C3%B3n%20Fitness."
+              target="_blank"
+              class="inline-flex items-center gap-2 bg-yellow-400 hover:bg-yellow-500 text-slate-900 font-semibold rounded-full px-5 py-2 mt-2 transition-shadow shadow hover:shadow-lg"
+              aria-label="Solicitar Instituto de Formación Fitness por WhatsApp"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M22 16.92V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h2.09a2 2 0 0 1 1.41.59l2.83 2.83a2 2 0 0 0 1.41.59H19a2 2 0 0 1 2 2v1.08"/><path d="M19 16v-6"/><path d="M16 13h6"/></svg>
+              Solicitar
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+      
+
+    <!-- Clases -->
+    <section id="clases" class="py-20 px-6 bg-slate-800 fade-slide">
+        <div class="max-w-6xl mx-auto text-center">
+          <h2 class="text-3xl sm:text-4xl font-bold mb-6">Nuestras Clases</h2>
+          <p class="text-slate-300 mb-10 max-w-3xl mx-auto">
+            Clases y entrenamientos para todos los intereses y niveles:
+          </p>
+          <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
+            <!-- Entrenamiento Funcional -->
+            <div class="bg-slate-700 rounded-2xl shadow-lg group overflow-hidden transition">
+              <div class="relative h-56 w-full overflow-hidden">
+                <img src="assets/Clases/Entrenamiento-personalizado.webp"
+                  alt="Zona funcional equipada con pesas, bandas y colchonetas, sin personas, luz natural, estilo minimalista"
+                  class="w-full h-full object-cover object-center transition-transform duration-300 group-hover:scale-105" />
+                <div class="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition duration-300"></div>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-semibold text-white mb-2">Entrenamiento Funcional</h3>
+                <p class="text-slate-300">Sesiones variadas con peso corporal y máquinas para mejorar movilidad y fuerza.</p>
+              </div>
+            </div>
+            <!-- Kickboxing -->
+            <div class="bg-slate-700 rounded-2xl shadow-lg group overflow-hidden transition">
+              <div class="relative h-56 w-full overflow-hidden">
+                <img src="assets/Clases/Kick-boxing.webp"
+                  alt="Saco de boxeo colgado, guantes y vendas sobre el suelo, ambiente moderno de gimnasio, sin personas, fondo oscuro elegante"
+                  class="w-full h-full object-cover object-center transition-transform duration-300 group-hover:scale-105" />
+                <div class="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition duration-300"></div>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-semibold text-white mb-2">Kickboxing</h3>
+                <p class="text-slate-300">Mejorá coordinación, potencia y resistencia con nuestro coach especializado.</p>
+              </div>
+            </div>
+            <!-- Powerlifting -->
+            <div class="bg-slate-700 rounded-2xl shadow-lg group overflow-hidden transition">
+              <div class="relative h-56 w-full overflow-hidden">
+                <img src="assets/Clases/Powerlifting.webp"
+                  alt="Barra olímpica con pesas grandes sobre plataforma, luz dramática, ambiente de gimnasio profesional, sin personas"
+                  class="w-full h-full object-cover object-center transition-transform duration-300 group-hover:scale-105" />
+                <div class="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition duration-300"></div>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-semibold text-white mb-2">Powerlifting</h3>
+                <p class="text-slate-300">Entrenamiento de fuerza máxima en sentadilla, press banca y peso muerto.</p>
+              </div>
+            </div>
+            <!-- Físico Culturista -->
+            <div class="bg-slate-700 rounded-2xl shadow-lg group overflow-hidden transition">
+              <div class="relative h-56 w-full overflow-hidden">
+                <img src="assets/Clases/Fisico-culturista.webp"
+                  alt="Escenario con iluminación de competencia, trofeo y barra de pesas, ambiente de físico culturismo, sin personas"
+                  class="w-full h-full object-cover object-center transition-transform duration-300 group-hover:scale-105" />
+                <div class="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition duration-300"></div>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-semibold text-white mb-2">Físico Culturista</h3>
+                <p class="text-slate-300">Rutinas orientadas a hipertrofia y estética corporal con planificación avanzada.</p>
+              </div>
+            </div>
+            <!-- Preparación Policial/Bomberos -->
+            <div class="bg-slate-700 rounded-2xl shadow-lg group overflow-hidden transition">
+              <div class="relative h-56 w-full overflow-hidden">
+                <img src="assets/Clases/Preparacion.webp"
+                  alt="Zona de entrenamiento con conos, pesas y cuerda de batalla, ambiente de pruebas físicas policiales, sin personas"
+                  class="w-full h-full object-cover object-center transition-transform duration-300 group-hover:scale-105" />
+                <div class="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition duration-300"></div>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-semibold text-white mb-2">Preparación Policial/Bomberos</h3>
+                <p class="text-slate-300">Entrenamientos específicos para pruebas de ingreso a fuerzas de seguridad y bomberos.</p>
+              </div>
+            </div>
+            <!-- Calistenia -->
+            <div class="bg-slate-700 rounded-2xl shadow-lg group overflow-hidden transition">
+              <div class="relative h-56 w-full overflow-hidden">
+                <img src="assets/Clases/Calistenia.webp"
+                  alt="Barras paralelas y anillas en parque de calistenia, ambiente natural, luz suave, sin personas"
+                  class="w-full h-full object-cover object-center transition-transform duration-300 group-hover:scale-105" />
+                <div class="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition duration-300"></div>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-semibold text-white mb-2">Calistenia</h3>
+                <p class="text-slate-300">Pista completa con barras y espacio para entrenar solo con tu peso corporal.</p>
+              </div>
+            </div>
+            <!-- Strongman -->
+            <div class="bg-slate-700 rounded-2xl shadow-lg group overflow-hidden transition">
+              <div class="relative h-56 w-full overflow-hidden">
+                <img src="assets/Clases/StrogMan.webp"
+                  alt="Rueda de tractor gigante y barra para levantamiento de yugo en gimnasio industrial, sin personas"
+                  class="w-full h-full object-cover object-center transition-transform duration-300 group-hover:scale-105" />
+                <div class="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition duration-300"></div>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-semibold text-white mb-2">Strongman</h3>
+                <p class="text-slate-300">Levantamiento de yugo, trineo y objetos de fuerza funcional.</p>
+              </div>
+            </div>
+            <!-- Entrenamiento Fútbol -->
+            <div class="bg-slate-700 rounded-2xl shadow-lg group overflow-hidden transition">
+              <div class="relative h-56 w-full overflow-hidden">
+                <img src="assets/Clases/Futbol.webp"
+                  alt="Cancha de fútbol bajo techo, conos de agilidad, pelotas y material de entrenamiento, luz natural, sin personas"
+                  class="w-full h-full object-cover object-center transition-transform duration-300 group-hover:scale-105" />
+                <div class="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition duration-300"></div>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-semibold text-white mb-2">Entrenamiento Fútbol</h3>
+                <p class="text-slate-300">Programas específicos para mejorar rendimiento y prevención de lesiones.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+
+    <!-- Instalaciones y Equipamiento -->
+    <section id="instalaciones" class="py-20 px-6 fade-slide">
+      <div class="max-w-5xl mx-auto text-center">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-slate-100">
+          Instalaciones
+        </h2>
+        <p class="text-slate-300 mb-10 max-w-3xl mx-auto">
+          Contamos con una pista de entrenamiento funcional completa, máquinas
+          de peso medio, y más de 200 kg en discos y barras olímpicas para que
+          entrenes sin límites.
+        </p>
+        <div class="grid sm:grid-cols-2 gap-6">
+          <div>
+            <img
+              src="./Maquinaria/Pista completa.jpg"
+              alt="Pista de entrenamiento funcional con obstáculos "
+              class="object-cover w-full rounded-lg shadow-md fade-slide"
+            />
+          </div>
+          <div>
+            <img
+              src="./Maquinaria/Imagen de WhatsApp 2025-06-05 a las 00.04.39_85a34d03.jpg"
+              alt="Racks de discos olímpicos apilados"
+              class="w-full rounded-lg object-cover shadow-md fade-slide max-h-[282px]"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ubicación -->
+    <section id="ubicacion" class="py-20 px-6 bg-slate-800 fade-slide">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-slate-100">
+          ¿Dónde estamos?
+        </h2>
+
+        <p class="text-slate-300 mb-6">
+          Nos encontramos a menos de 8 cuadras de la Avenida Furgoni. Somos de
+          fácil acceso tanto en auto como transporte público.
+        </p>
+        <p class="text-slate-50 mb-4">Guenoas 2781, Durazno, Uruguay</p>
+        <div
+          class="w-full h-64 bg-gray-700 rounded-lg overflow-hidden fade-slide"
+        >
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3340.7520336646055!2d-56.5384067!3d-33.3859721!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a6ea99af9341b9%3A0x2e3d793832435b85!2sGuenoas%202781%2C%2097000%20Durazno%2C%20Departamento%20de%20Durazno!5e0!3m2!1ses-419!2suy!4v1717572160000!5m2!1ses-419!2suy"
+            class="w-full h-full"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          >
+          </iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contacto vía WhatsApp -->
+    <section id="contacto" class="py-20 px-6 fade-slide">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-slate-100">
+          Contacto
+        </h2>
+        <p class="text-slate-300 mb-10">
+          Completá el formulario y te redirigiremos a WhatsApp para seguir la
+          conversación.
+        </p>
+        <form id="whatsappForm" class="space-y-6 text-left">
+          <div>
+            <label class="block text-slate-200 mb-1">Nombre</label>
+            <input
+              type="text"
+              id="nombre"
+              placeholder="Tu nombre"
+              required
+              class="w-full bg-white/5 text-slate-100 border border-white/10 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-[#E11D48]"
+            />
+          </div>
+          <div>
+            <label class="block text-slate-200 mb-1">Mensaje</label>
+            <textarea
+              id="mensaje"
+              rows="4"
+              placeholder="Escribí tu consulta aquí"
+              required
+              class="w-full bg-white/5 text-slate-100 border border-white/10 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-[#E11D48]"
+            ></textarea>
+          </div>
+          <button
+            type="submit"
+            class="bg-[#E11D48] hover:bg-rose-700 text-white font-semibold py-3 px-6 rounded-md transition-all"
+          >
+            Enviar por WhatsApp
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Botón flotante de WhatsApp -->
+<a
+href="https://wa.me/59896401296?text=Hola!%20Quiero%20más%20info%20sobre%20el%20gimnasio."
+class="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white rounded-full shadow-lg flex items-center justify-center w-14 h-14 transition-all"
+target="_blank"
+aria-label="WhatsApp"
+rel="noopener"
+>
+<!-- Ícono de WhatsApp SVG -->
+<svg viewBox="0 0 32 32" width="32" height="32" fill="currentColor" class="w-8 h-8">
+  <path d="M16 3C9.4 3 4 8.4 4 15c0 2.5.8 4.9 2.1 7L4 29l7.2-2.1C13.1 27.6 14.5 28 16 28c6.6 0 12-5.4 12-12S22.6 3 16 3zm0 22c-1.4 0-2.7-.2-4-.7l-.3-.1-4.3 1.3 1.3-4.2-.2-.3C7.2 18.2 7 16.6 7 15 7 9.5 11.5 5 17 5s10 4.5 10 10-4.5 10-10 10zm5.4-7.7c-.3-.1-1.7-.8-2-1-.3-.1-.5-.2-.7.1s-.8 1-.9 1.1c-.1.1-.3.1-.6-.1-.3-.1-1.1-.4-2-1.2-.7-.6-1.2-1.4-1.4-1.7-.1-.3 0-.4.1-.6.1-.1.3-.4.4-.5.1-.1.2-.3.3-.5.1-.2 0-.4 0-.6 0-.2-.6-1.5-.8-2-.2-.5-.4-.4-.6-.4h-.5c-.1 0-.4.1-.7.4s-.9.8-.9 2c0 1.2.8 2.3 1 2.6.1.1 1.5 2.2 3.6 3.1 1.2.5 1.7.6 2.3.6.4 0 .8 0 1.2-.1.4-.1 1.3-.5 1.5-1.1.2-.6.2-1.2.1-1.3z"/>
+</svg>
+</a>
+
+<footer class="bg-slate-900 border-t border-slate-800 pt-10 pb-4 px-4">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8 items-center text-slate-200">
+      <!-- Columna 1: Logo + Claim -->
+      <div class="flex flex-col items-center md:items-start gap-3">
+        <img src="./assets/Logo.svg" alt="Logo Actitud Fitness Durazno" class="w-16 h-16 rounded-full mb-1" />
+        <span class="text-xl font-bold">Actitud Fitness Durazno</span>
+        <span class="text-slate-400 text-base">Donde la disciplina se convierte en actitud.</span>
+      </div>
+      <!-- Columna 2: Contacto -->
+      <div class="text-center md:text-left">
+        <h3 class="text-lg font-semibold mb-1">Contacto</h3>
+        <p>Guenoas 2781, Durazno, Uruguay</p>
+        <p>
+          Tel: <a href="https://wa.me/59896401296" class="text-emerald-400 hover:underline" target="_blank">096 401 296</a>
+        </p>
+        <p>
+          Email: <a href="mailto:info@actitudfitness.com" class="text-emerald-400 hover:underline">info@actitudfitness.com</a>
+        </p>
+      </div>
+      <!-- Columna 3: Redes Sociales -->
+      <div class="flex flex-col items-center md:items-end gap-2">
+        <h3 class="text-lg font-semibold mb-2">Redes Sociales</h3>
+        <div class="flex gap-4 text-2xl">
+          <!-- WhatsApp -->
+          <a href="https://wa.me/59896401296" target="_blank" aria-label="WhatsApp"
+            class="hover:text-emerald-400 transition-colors">
+            <svg fill="currentColor" class="w-6 h-6" viewBox="0 0 32 32">
+              <path d="M16.002 3C9.382 3 4 8.383 4 15.002c0 2.447.729 4.732 2.117 6.713L4.063 29.364a1 1 0 0 0 1.314 1.315l7.646-2.054a11.915 11.915 0 0 0 2.978.379c6.62 0 12.002-5.383 12.002-12.002C28.002 8.383 22.62 3 16.002 3zm.001 2c5.523 0 10.001 4.478 10.001 10.002 0 5.522-4.478 10.001-10.001 10.001a9.933 9.933 0 0 1-2.702-.36 1 1 0 0 0-.591.015l-6.2 1.667 1.665-6.14a1 1 0 0 0-.14-.792A9.995 9.995 0 0 1 6.001 15.002C6.001 9.478 10.479 5 16.003 5zm5.378 12.21c-.303-.151-1.794-.885-2.071-.985-.277-.1-.48-.15-.683.152-.202.302-.78.984-.956 1.187-.177.203-.353.228-.655.076-.303-.152-1.277-.469-2.434-1.497-.899-.799-1.506-1.786-1.684-2.09-.177-.304-.019-.468.133-.62.137-.136.304-.354.456-.531.151-.177.201-.304.303-.505.102-.202.052-.38-.025-.532-.077-.152-.683-1.646-.935-2.257-.245-.592-.494-.509-.684-.519-.176-.008-.378-.01-.579-.01a1.117 1.117 0 0 0-.81.38c-.278.304-1.06 1.034-1.06 2.523 0 1.488 1.084 2.927 1.235 3.131.151.202 2.139 3.27 5.183 4.46.725.312 1.29.497 1.731.636.727.233 1.389.2 1.91.121.583-.087 1.794-.733 2.048-1.441.253-.708.253-1.315.177-1.442-.076-.127-.277-.202-.58-.354z"/>
+            </svg>
+          </a>
+          <!-- Instagram -->
+          <a href="https://www.instagram.com/actitudfitness_uy/" target="_blank" aria-label="Instagram"
+            class="hover:text-pink-400 transition-colors">
+            <svg fill="currentColor" class="w-6 h-6" viewBox="0 0 24 24">
+              <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5a4.25 4.25 0 0 0 4.25-4.25v-8.5A4.25 4.25 0 0 0 16.25 3.5zm4.25 3A5.75 5.75 0 1 1 8.5 17.25a5.75 5.75 0 0 1 8.5-7.25zm0 1.5a4.25 4.25 0 1 0 0 8.5a4.25 4.25 0 0 0 0-8.5zm6.25 1.25a1 1 0 1 1-2 0a1 1 0 0 1 2 0z"/>
+            </svg>
+          </a>
+          <!-- Facebook -->
+          <a href="https://www.facebook.com/profile.php?id=100063598658246" target="_blank" aria-label="Facebook"
+            class="hover:text-blue-400 transition-colors">
+            <svg fill="currentColor" class="w-6 h-6" viewBox="0 0 24 24">
+              <path d="M13.024 21.999v-8.197h2.742l.411-3.193h-3.153V8.406c0-.925.256-1.556 1.585-1.556h1.695V4.011A22.324 22.324 0 0 0 14.471 4c-2.377 0-4.004 1.448-4.004 4.112v2.295H7.013v3.193h3.454v8.197h2.557z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- Separador -->
+    <div class="border-t border-slate-800 mt-8 pt-4 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-400 gap-2">
+      <span>© 2025 Actitud Fitness Durazno. Todos los derechos reservados.</span>
+      <span>
+        Desarrollado por 
+        <a href="https://www.linkedin.com/in/maximo-porcile-abb2b4338/" 
+           class="text-emerald-400 hover:underline font-semibold"
+           target="_blank"
+           rel="noopener"
+        >Máximo Galo</a>
+      </span>
+    </div>
+  </footer>
+  
+      
+
+    <script>
+      // Animaciones por scroll
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) entry.target.classList.add("show");
+          });
+        },
+        { threshold: 0.2 }
+      );
+      document
+        .querySelectorAll(".fade-slide")
+        .forEach((el) => observer.observe(el));
+
+      // Menú hamburger
+      const hamburgerButton = document.getElementById("hamburgerButton");
+      const mobileMenu = document.getElementById("mobileMenu");
+      const hamburgerIcon = document.getElementById("hamburgerIcon");
+      hamburgerButton.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+        hamburgerIcon.classList.toggle("open");
+        const isExpanded =
+          hamburgerButton.getAttribute("aria-expanded") === "true";
+        hamburgerButton.setAttribute("aria-expanded", !isExpanded);
+        hamburgerButton.setAttribute(
+          "aria-label",
+          isExpanded ? "Abrir menú" : "Cerrar menú"
+        );
+      });
+      function closeMobileMenu() {
+        mobileMenu.classList.add("hidden");
+        hamburgerIcon.classList.remove("open");
+        hamburgerButton.setAttribute("aria-expanded", "false");
+        hamburgerButton.setAttribute("aria-label", "Abrir menú");
+      }
+
+      // Enviar a WhatsApp al enviar el formulario
+      document
+        .getElementById("whatsappForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          const nombre = encodeURIComponent(
+            document.getElementById("nombre").value.trim()
+          );
+          const mensaje = encodeURIComponent(
+            document.getElementById("mensaje").value.trim()
+          );
+          const numero = "59896401296";
+          const texto = `Hola, soy ${nombre}. ${mensaje}`;
+          const url = `https://wa.me/${numero}?text=${texto}`;
+          window.open(url, "_blank");
+        });
+    </script>
+  </body>
+</html>
