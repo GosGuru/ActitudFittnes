@@ -984,11 +984,20 @@
       background-color: color-mix(in oklab, var(--color-yellow-500) 80%, transparent);
     }
   }
+  .bg-bottom {
+    background-position: bottom;
+  }
   .object-cover {
     object-fit: cover;
   }
+  .object-bottom {
+    object-position: bottom;
+  }
   .object-center {
     object-position: center;
+  }
+  .object-top {
+    object-position: top;
   }
   .p-0 {
     padding: calc(var(--spacing) * 0);

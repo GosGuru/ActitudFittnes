@@ -1,141 +1,328 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sobre Nosotros - Actitud Fitness Durazno</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    html { scroll-behavior: smooth; }
-    .fade-slide { opacity: 0; transform: translateY(40px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
-    .fade-slide.show { opacity: 1; transform: translateY(0); }
-    .hamburger-icon span { display: block; width: 24px; height: 3px; background-color: #F1F5F9; margin: 5px 0; transition: all 0.3s ease-in-out; }
-    .hamburger-icon.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
-    .hamburger-icon.open span:nth-child(2) { opacity: 0; }
-    .hamburger-icon.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
-  </style>
-</head>
-<body class="bg-[#0F172A] text-[#F1F5F9] font-sans">
-  <!-- Header -->
-  <header class="fixed top-0 left-0 w-full bg-[#0F172A]/80 backdrop-blur z-50 border-b border-white/10">
-    <div class="max-w-6xl mx-auto flex items-center justify-between px-4 py-4">
-      <a href="index.html"><img src="assets/Logo.svg" alt="Logotipo Actitud Fitness" class="h-12 w-auto" /></a>
-      <nav class="hidden md:flex space-x-6">
-        <a href="index.html#inicio" class="hover:text-[#E11D48] transition-colors">Inicio</a>
-        <a href="./sobrenosotros.html" class="hover:text-[#E11D48] transition-colors"> Nosotros</a>
-        <a href="index.html#servicios" class="hover:text-[#E11D48] transition-colors">Servicios</a>
-        <a href="index.html#clases" class="hover:text-[#E11D48] transition-colors">Clases</a>
-        <a href="index.html#instalaciones" class="hover:text-[#E11D48] transition-colors">Instalaciones</a>
-        <a href="index.html#ubicacion" class="hover:text-[#E11D48] transition-colors">Ubicación</a>
-        <a href="index.html#contacto" class="hover:text-[#E11D48] transition-colors">Contacto</a>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sobre Nosotros - Actitud Fitness Durazno</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      .fade-slide {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+      }
+      .fade-slide.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .hamburger-icon span {
+        display: block;
+        width: 24px;
+        height: 3px;
+        background-color: #f1f5f9;
+        margin: 5px 0;
+        transition: all 0.3s ease-in-out;
+      }
+      .hamburger-icon.open span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+      }
+      .hamburger-icon.open span:nth-child(2) {
+        opacity: 0;
+      }
+      .hamburger-icon.open span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+      }
+    </style>
+  </head>
+  <body class="bg-[#0F172A] text-[#F1F5F9] font-sans">
+    <!-- Header -->
+    <header
+      class="fixed top-0 left-0 w-full bg-[#0F172A]/80 backdrop-blur z-50 border-b border-white/10"
+    >
+      <div
+        class="max-w-6xl mx-auto flex items-center justify-between px-4 py-4"
+      >
+        <a href="index.html"
+          ><img
+            src="assets/Logo.svg"
+            alt="Logotipo Actitud Fitness"
+            class="h-12 w-auto"
+        /></a>
+        <nav class="hidden md:flex space-x-6">
+          <a
+            href="index.html#inicio"
+            class="hover:text-[#E11D48] transition-colors"
+            >Inicio</a
+          >
+          <a
+            href="./sobrenosotros.html"
+            class="hover:text-[#E11D48] transition-colors"
+          >
+            Nosotros</a
+          >
+          <a
+            href="index.html#servicios"
+            class="hover:text-[#E11D48] transition-colors"
+            >Servicios</a
+          >
+          <a
+            href="index.html#clases"
+            class="hover:text-[#E11D48] transition-colors"
+            >Clases</a
+          >
+          <a
+            href="index.html#instalaciones"
+            class="hover:text-[#E11D48] transition-colors"
+            >Instalaciones</a
+          >
+          <a
+            href="index.html#ubicacion"
+            class="hover:text-[#E11D48] transition-colors"
+            >Ubicación</a
+          >
+          <a
+            href="index.html#contacto"
+            class="hover:text-[#E11D48] transition-colors"
+            >Contacto</a
+          >
+        </nav>
+        <button
+          id="hamburgerButton"
+          class="md:hidden focus:outline-none"
+          aria-label="Abrir menú"
+        >
+          <div class="hamburger-icon" id="hamburgerIcon">
+            <span></span><span></span><span></span>
+          </div>
+        </button>
+      </div>
+      <nav
+        id="mobileMenu"
+        class="hidden md:hidden bg-[#0F172A]/90 border-t border-white/10 pb-4"
+      >
+        <ul class="flex flex-col items-center space-y-4 py-2">
+          <li>
+            <a
+              href="index.html#inicio"
+              class="text-lg hover:text-[#E11D48] transition-colors"
+              onclick="closeMobileMenu()"
+              >Inicio</a
+            >
+          </li>
+          <li>
+            <a
+              href="nosotros.html"
+              class="text-lg hover:text-[#E11D48] transition-colors"
+              onclick="closeMobileMenu()"
+              >Sobre Nosotros</a
+            >
+          </li>
+          <li>
+            <a
+              href="index.html#servicios"
+              class="text-lg hover:text-[#E11D48] transition-colors"
+              onclick="closeMobileMenu()"
+              >Servicios</a
+            >
+          </li>
+          <li>
+            <a
+              href="index.html#clases"
+              class="text-lg hover:text-[#E11D48] transition-colors"
+              onclick="closeMobileMenu()"
+              >Clases</a
+            >
+          </li>
+          <li>
+            <a
+              href="index.html#instalaciones"
+              class="text-lg hover:text-[#E11D48] transition-colors"
+              onclick="closeMobileMenu()"
+              >Instalaciones</a
+            >
+          </li>
+          <li>
+            <a
+              href="index.html#ubicacion"
+              class="text-lg hover:text-[#E11D48] transition-colors"
+              onclick="closeMobileMenu()"
+              >Ubicación</a
+            >
+          </li>
+          <li>
+            <a
+              href="index.html#contacto"
+              class="text-lg hover:text-[#E11D48] transition-colors"
+              onclick="closeMobileMenu()"
+              >Contacto</a
+            >
+          </li>
+        </ul>
       </nav>
-      <button id="hamburgerButton" class="md:hidden focus:outline-none" aria-label="Abrir menú">
-        <div class="hamburger-icon" id="hamburgerIcon"><span></span><span></span><span></span></div>
-      </button>
-    </div>
-    <nav id="mobileMenu" class="hidden md:hidden bg-[#0F172A]/90 border-t border-white/10 pb-4">
-      <ul class="flex flex-col items-center space-y-4 py-2">
-        <li><a href="index.html#inicio" class="text-lg hover:text-[#E11D48] transition-colors" onclick="closeMobileMenu()">Inicio</a></li>
-        <li><a href="nosotros.html" class="text-lg hover:text-[#E11D48] transition-colors" onclick="closeMobileMenu()">Sobre Nosotros</a></li>
-        <li><a href="index.html#servicios" class="text-lg hover:text-[#E11D48] transition-colors" onclick="closeMobileMenu()">Servicios</a></li>
-        <li><a href="index.html#clases" class="text-lg hover:text-[#E11D48] transition-colors" onclick="closeMobileMenu()">Clases</a></li>
-        <li><a href="index.html#instalaciones" class="text-lg hover:text-[#E11D48] transition-colors" onclick="closeMobileMenu()">Instalaciones</a></li>
-        <li><a href="index.html#ubicacion" class="text-lg hover:text-[#E11D48] transition-colors" onclick="closeMobileMenu()">Ubicación</a></li>
-        <li><a href="index.html#contacto" class="text-lg hover:text-[#E11D48] transition-colors" onclick="closeMobileMenu()">Contacto</a></li>
-      </ul>
-    </nav>
-  </header>
+    </header>
 
-  <main class="pt-32">
-    <!-- Historia de Actitud Fitness -->
-    <section id="historia" class="py-20 px-6 fade-slide">
-      <div class="max-w-5xl mx-auto text-center">
-        <h2 class="text-3xl sm:text-4xl font-bold mb-6">Nuestra Historia</h2>
-        <p class="text-slate-300 mb-10 max-w-3xl mx-auto">
-          Actitud Fitness comenzó hace más de una década cuando nuestro fundador, <span class="text-[#E11D48] font-semibold">Rafael Barragan</span>, con solo 18 años, soñaba con crear un espacio donde el entrenamiento y la comunidad fueran una sola cosa. Tras superar dificultades personales y compartir su pasión con amigos, abrió las puertas de este gimnasio en Durazno. Desde entonces, hemos crecido junto a la comunidad y mantenemos vivo ese espíritu de superación.<br /><br />
-          “Empecé entrenando sin casi recursos, pero la pasión y la disciplina me hicieron persistir. Hoy, quiero compartir todo lo que aprendí para que otros también puedan superar sus límites.”
-        </p>
-        <!-- Imagen representativa de la historia -->
-        <div class="grid sm:grid-cols-2 gap-6">
-          <img src="assets/historia1.jpg" alt="Fundador joven entrenando" class="w-full rounded-lg shadow-md">
-          <img src="assets/historia2.jpg" alt="Primer gimnasio histórico" class="w-full rounded-lg shadow-md">
-        </div>
-      </div>
-    </section>
-
-    <!-- Fundador -->
-    <section id="fundador" class="py-20 px-6 bg-slate-800 fade-slide">
-      <div class="max-w-4xl mx-auto text-center">
-        <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-slate-100">Conocé al Fundador</h2>
-        <div class="flex flex-col sm:flex-row items-center gap-6">
-          <img src="assets/fundador.jpg" alt="Rafael Barragan - Fundador" class="w-48 h-48 rounded-full border-4 border-white/20 shadow-lg">
-          <div class="text-left">
-            <h3 class="text-2xl font-semibold text-white mb-2">Rafael Barragan</h3>
-            <p class="text-slate-300">
-              Empezó entrenando a los 18 años en condiciones precarias, pero su pasión lo llevó a formarse como entrenador y competidor. Hoy es el corazón de Actitud Fitness y guía con su experiencia a cada miembro que llega.
-            </p>
+    <main class="pt-32">
+      <!-- Historia de Actitud Fitness -->
+      <section id="historia" class="py-20 px-6 fade-slide">
+        <div class="max-w-5xl mx-auto text-center">
+          <h2 class="text-3xl sm:text-4xl font-bold mb-6">Nuestra Historia</h2>
+          <p class="text-slate-300 mb-10 max-w-3xl mx-auto">
+            Actitud Fitness comenzó hace más de una década cuando nuestro
+            fundador,
+            <span class="text-[#E11D48] font-semibold">Rafael Barragan</span>,
+            con solo 18 años, soñaba con crear un espacio donde el entrenamiento
+            y la comunidad fueran una sola cosa. Tras superar dificultades
+            personales y compartir su pasión con amigos, abrió las puertas de
+            este gimnasio en Durazno. Desde entonces, hemos crecido junto a la
+            comunidad y mantenemos vivo ese espíritu de superación.<br /><br />
+            “Empecé entrenando sin casi recursos, pero la pasión y la disciplina
+            me hicieron persistir. Hoy, quiero compartir todo lo que aprendí
+            para que otros también puedan superar sus límites.”
+          </p>
+          <!-- Imagen representativa de la historia -->
+          <div class="grid sm:grid-cols-2 gap-6">
+            <img
+              src="assets/historia1.jpg"
+              alt="Fundador joven entrenando"
+              class="w-full rounded-lg shadow-md"
+            />
+            <img
+              src="assets/historia2.jpg"
+              alt="Primer gimnasio histórico"
+              class="w-full rounded-lg shadow-md"
+            />
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Profesores -->
-    <section id="profesores" class="py-20 px-6 fade-slide">
-      <div class="max-w-5xl mx-auto text-center">
-        <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-slate-100">Nuestro Equipo de Profesores</h2>
-        <p class="text-slate-300 mb-10 max-w-3xl mx-auto">Conocé a los entrenadores expertos que te acompañarán en cada paso.</p>
-        <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
-          <!-- Profesor 1: Fundador -->
-          <div class="bg-slate-700 rounded-xl p-6 shadow hover:shadow-lg transition">
-            <img src="assets/fundador.jpg" alt="Rafael Barragan" class="w-24 h-24 rounded-full mx-auto mb-4">
-            <h3 class="text-xl font-semibold text-white mb-1">Rafael Barragan</h3>
-            <p class="text-slate-300 text-sm">Fundador y Entrenador Principal</p>
+      <!-- Fundador -->
+      <section id="fundador" class="py-20 px-6 bg-slate-800 fade-slide">
+        <div class="max-w-4xl mx-auto text-center">
+          <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-slate-100">
+            Conocé al Fundador
+          </h2>
+          <div class="flex flex-col sm:flex-row items-center gap-6">
+            <img
+              src="assets/Rafa-Actual.jpg"
+              alt="Rafael Barragan - Fundador"
+              class="w-48 h-48 rounded-full border-4 border-white/20 shadow-lg"
+            />
+            <div class="text-left">
+              <h3 class="text-2xl font-semibold text-white mb-2">
+                Rafael Barragan
+              </h3>
+              <p class="text-slate-300">
+                Empezó entrenando a los 18 años en condiciones precarias, pero
+                su pasión lo llevó a formarse como entrenador y competidor. Hoy
+                es el corazón de Actitud Fitness y guía con su experiencia a
+                cada miembro que llega.
+              </p>
+            </div>
           </div>
-          <!-- Profesor 2: placeholder -->
-          <div class="bg-slate-700 rounded-xl p-6 shadow hover:shadow-lg transition">
-            <img src="assets/profesor2.jpg" alt="Profesor 2" class="w-24 h-24 rounded-full mx-auto mb-4">
-            <h3 class="text-xl font-semibold text-white mb-1">María López</h3>
-            <p class="text-slate-300 text-sm">Entrenadora Funcional</p>
-          </div>
-          <!-- Profesor 3: placeholder -->
-          <div class="bg-slate-700 rounded-xl p-6 shadow hover:shadow-lg transition">
-            <img src="assets/profesor3.jpg" alt="Profesor 3" class="w-24 h-24 rounded-full mx-auto mb-4">
-            <h3 class="text-xl font-semibold text-white mb-1">Carlos Méndez</h3>
-            <p class="text-slate-300 text-sm">Especialista en Powerlifting</p>
-          </div>
-          <!-- Agregar más profesores aquí -->
         </div>
-      </div>
-    </section>
-  </main>
+      </section>
 
-  <!-- Footer -->
-  <footer class="text-center py-6 border-t border-slate-800 text-sm text-slate-400">
-    © 2025 Actitud Fitness Durazno. Todos los derechos reservados.
-  </footer>
+      <!-- Profesores -->
+      <section id="profesores" class="py-20 px-6 fade-slide">
+        <div class="max-w-5xl mx-auto text-center">
+          <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-slate-100">
+            Nuestro Equipo de Profesores
+          </h2>
+          <p class="text-slate-300 mb-10 max-w-3xl mx-auto">
+            Conocé a los entrenadores expertos que te acompañarán en cada paso.
+          </p>
+            <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
+            <!-- Profesor 1: Fundador -->
+            <div
+              class="bg-slate-700 rounded-xl p-6 shadow hover:shadow-lg transition"
+            >
+              <img
+                src="assets/Rafa-Actual.jpg"
+                alt="Rafael Barragan"
+                class="w-24 h-24 rounded-full mx-auto mb-4 object-cover object-top"
+              />
+              <h3 class="text-xl font-semibold text-white mb-1">
+                Rafael Barragan
+              </h3>
+              <p class="text-slate-300 text-sm">
+                Fundador y Entrenador Principal
+              </p>
+            </div>
+            <!-- Profesor 2: placeholder
+            <div
+              class="bg-slate-700 rounded-xl p-6 shadow hover:shadow-lg transition"
+            >
+              <img
+                src="assets/profesor2.jpg"
+                alt="Profesor 2"
+                class="w-24 h-24 rounded-full mx-auto mb-4"
+              />
+              <h3 class="text-xl font-semibold text-white mb-1">María López</h3>
+              <p class="text-slate-300 text-sm">Entrenadora Funcional</p>
+            </div>
+        Profesor 3: placeholder
+            <div
+              class="bg-slate-700 rounded-xl p-6 shadow hover:shadow-lg transition"
+            >
+              <img
+                src="assets/profesor3.jpg"
+                alt="Profesor 3"
+                class="w-24 h-24 rounded-full mx-auto mb-4"
+              />
+              <h3 class="text-xl font-semibold text-white mb-1">
+                Carlos Méndez
+              </h3>
+              <p class="text-slate-300 text-sm">Especialista en Powerlifting</p>
+            </div> -->
+            <!-- Agregar más profesores aquí -->
+          </div>
+        </div>
+      </section>
+    </main>
 
-  <script>
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('show'); });
-    }, { threshold: 0.2 });
-    document.querySelectorAll('.fade-slide').forEach(el => observer.observe(el));
+    <!-- Footer -->
+    <footer
+      class="text-center py-6 border-t border-slate-800 text-sm text-slate-400"
+    >
+      © 2025 Actitud Fitness Durazno. Todos los derechos reservados.
+    </footer>
 
-    const hamburgerButton = document.getElementById('hamburgerButton');
-    const mobileMenu = document.getElementById('mobileMenu');
-    const hamburgerIcon = document.getElementById('hamburgerIcon');
-    hamburgerButton.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-      hamburgerIcon.classList.toggle('open');
-      const isExpanded = hamburgerButton.getAttribute('aria-expanded') === 'true';
-      hamburgerButton.setAttribute('aria-expanded', !isExpanded);
-      hamburgerButton.setAttribute('aria-label', isExpanded ? 'Abrir menú' : 'Cerrar menú');
-    });
-    function closeMobileMenu() {
-      mobileMenu.classList.add('hidden');
-      hamburgerIcon.classList.remove('open');
-      hamburgerButton.setAttribute('aria-expanded', 'false');
-      hamburgerButton.setAttribute('aria-label', 'Abrir menú');
-    }
-  </script>
-</body>
+    <script>
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) entry.target.classList.add("show");
+          });
+        },
+        { threshold: 0.2 }
+      );
+      document
+        .querySelectorAll(".fade-slide")
+        .forEach((el) => observer.observe(el));
+
+      const hamburgerButton = document.getElementById("hamburgerButton");
+      const mobileMenu = document.getElementById("mobileMenu");
+      const hamburgerIcon = document.getElementById("hamburgerIcon");
+      hamburgerButton.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+        hamburgerIcon.classList.toggle("open");
+        const isExpanded =
+          hamburgerButton.getAttribute("aria-expanded") === "true";
+        hamburgerButton.setAttribute("aria-expanded", !isExpanded);
+        hamburgerButton.setAttribute(
+          "aria-label",
+          isExpanded ? "Abrir menú" : "Cerrar menú"
+        );
+      });
+      function closeMobileMenu() {
+        mobileMenu.classList.add("hidden");
+        hamburgerIcon.classList.remove("open");
+        hamburgerButton.setAttribute("aria-expanded", "false");
+        hamburgerButton.setAttribute("aria-label", "Abrir menú");
+      }
+    </script>
+  </body>
 </html>
