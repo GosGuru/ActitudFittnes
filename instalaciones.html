@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Conocé la evolución de Actitud Fitness Durazno. Desde sus primeros espacios hasta el moderno gimnasio actual, te mostramos cómo crecimos con esfuerzo y comunidad."
+    />
+    <title>Instalaciones - Historia de Actitud Fitness</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @keyframes diagonal-slide {
+        0% {
+          opacity: 0;
+          transform: translate(-40px, 40px);
+        }
+        100% {
+          opacity: 1;
+          transform: translate(0, 0);
+        }
+      }
+      .diagonal-slide {
+        animation: diagonal-slide 1s ease-out both;
+      }
+      .img-hover {
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s;
+      }
+      .img-hover:hover {
+        transform: scale(1.04) rotate(-1deg);
+        box-shadow: 0 8px 30px 0 rgba(80, 209, 255, 0.15);
+      }
+      /* Lightbox */
+      .fade-in {
+        animation: fadeIn 0.23s both;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      .slide-in {
+        animation: slideIn 0.25s both;
+      }
+      @keyframes slideIn {
+        from {
+          transform: scale(0.97) translateY(30px);
+          opacity: 0.2;
+        }
+        to {
+          transform: scale(1) translateY(0);
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-[#0F172A] text-[#F1F5F9] font-sans">
+    <!-- Header (puedes pegar tu versión pro aquí, dejo base) -->
+    <header
+      class="w-full bg-[#0F172A]/80 backdrop-blur z-50 border-b border-white/10 px-4 py-3 sm:px-6 sm:py-4"
+    >
+      <div
+        class="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-0"
+      >
+        <a
+          href="index.html"
+          class="flex items-center gap-1 text-white text-base font-semibold hover:text-blue-500 transition group focus:outline-none"
+        >
+          <span class="flex items-center justify-center h-7">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              stroke="currentColor"
+              class="w-5 h-5 group-hover:-translate-x-1 transition"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M15.75 19.5L8.25 12l7.5-7.5"
+              />
+            </svg>
+          </span>
+          <span class="pt-[2px]">Volver al sitio</span>
+        </a>
+        <div class="flex items-center gap-3">
+          <span
+            class="flex items-center justify-center w-11 h-11 bg-[#0F172A] rounded-full border-2 border-yellow-400 shadow-md"
+          >
+            <img
+              src="assets/Favicon.webp"
+              alt="Logo Actitud Fitness Durazno"
+              class="w-9 h-9 object-contain rounded-full"
+            />
+          </span>
+          <div class="flex flex-col leading-tight text-center sm:text-left">
+            <span
+              class="text-yellow-400 text-base font-black tracking-widest"
+              style="font-family: 'Montserrat', Arial, sans-serif"
+              >ACTITUD FITNESS</span
+            >
+            <span
+              class="text-white text-lg sm:text-xl font-black tracking-wide -mt-1"
+              style="font-family: 'Montserrat', Arial, sans-serif"
+              >DURAZNO</span
+            >
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="pt-16 px-6 pb-24">
+      <section class="max-w-4xl mx-auto text-center mb-16 diagonal-slide">
+        <h1 class="text-4xl sm:text-5xl font-bold mb-4">
+          Nuestras Instalaciones
+        </h1>
+        <p class="text-slate-300 max-w-2xl mx-auto text-lg leading-relaxed">
+          Un recorrido visual por los espacios donde entrenamos y soñamos en
+          comunidad. Desde nuestros comienzos humildes hasta el gimnasio moderno
+          de hoy.
+        </p>
+      </section>
+
+      <!-- Línea de tiempo visual con imágenes clickeables -->
+      <section class="max-w-6xl mx-auto space-y-24">
+        <!-- Primer gimnasio -->
+        <div class="grid md:grid-cols-2 gap-8 items-center diagonal-slide">
+          <div>
+            <img
+              src="instalaciones/primero1.webp"
+              alt="Primer gimnasio en casa"
+              class="rounded-2xl shadow-lg img-hover cursor-pointer aspect-[4/3] w-full max-h-[340px] object-cover"
+              onclick="openLightbox(0)"
+              tabindex="0"
+              aria-label="Ver imagen ampliada"
+            />
+          </div>
+          <div>
+            <h2
+              class="text-2xl font-bold mb-2 text-white bg-white/10 rounded-xl px-4 py-2 inline-block backdrop-blur-sm shadow-sm"
+            >
+              Primer Espacio
+            </h2>
+            <p class="text-slate-300">
+              Rafael comenzó en un pequeño cuarto con apenas unas mancuernas.
+              Este fue el verdadero nacimiento de Actitud Fitness, con un par de
+              amigos, pasión, y una idea clara: superarse cada día.
+            </p>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 items-center diagonal-slide">
+          <div>
+            <img
+              src="instalaciones/primero-2.webp"
+              alt="Inicio de los entrenamientos"
+              class="rounded-2xl shadow-lg img-hover cursor-pointer aspect-[4/3] w-full max-h-[340px] object-cover"
+              onclick="openLightbox(1)"
+              tabindex="0"
+              aria-label="Ver imagen ampliada"
+            />
+          </div>
+          <div>
+            <h2
+              class="text-2xl font-bold mb-2 text-white bg-white/10 rounded-xl px-4 py-2 inline-block backdrop-blur-sm shadow-sm"
+            >
+              Creciendo de a poco
+            </h2>
+            <p class="text-slate-300">
+              El espacio fue mejorando, se sumaron máquinas, más personas, y la
+              idea comenzó a convertirse en un gimnasio real: Actitud Fitness
+              empezaba a tomar forma.
+            </p>
+          </div>
+        </div>
+
+        <!-- Segundo gimnasio -->
+        <div class="grid md:grid-cols-2 gap-8 items-center diagonal-slide">
+          <div>
+            <img
+              src="instalaciones/Segundo1.webp"
+              alt="Segundo espacio del gimnasio"
+              class="rounded-2xl shadow-lg img-hover cursor-pointer aspect-[4/3] w-full max-h-[340px] object-cover"
+              onclick="openLightbox(2)"
+              tabindex="0"
+              aria-label="Ver imagen ampliada"
+            />
+          </div>
+          <div>
+            <h2
+              class="text-2xl font-bold mb-2 text-white bg-white/10 rounded-xl px-4 py-2 inline-block backdrop-blur-sm shadow-sm"
+            >
+              El segundo local
+            </h2>
+            <p class="text-slate-300">
+              En un espacio más amplio y acondicionado, comenzaron a sumarse más
+              máquinas, horarios más organizados y una comunidad que crecía cada
+              mes.
+            </p>
+          </div>
+        </div>
+
+        <!-- Actual gimnasio -->
+        <div class="grid md:grid-cols-2 gap-8 items-center diagonal-slide">
+          <div>
+            <img
+              src="instalaciones/actual-1.webp"
+              alt="Gimnasio actual"
+              class="rounded-2xl shadow-lg img-hover cursor-pointer aspect-[4/3] w-full max-h-[340px] object-cover"
+              onclick="openLightbox(3)"
+              tabindex="0"
+              aria-label="Ver imagen ampliada"
+            />
+          </div>
+          <div>
+            <h2
+              class="text-2xl font-bold mb-2 text-white bg-white/10 rounded-xl px-4 py-2 inline-block backdrop-blur-sm shadow-sm"
+            >
+              Actual Gimnasio
+            </h2>
+            <p class="text-slate-300">
+              Hoy contamos con un gimnasio completo, funcional, bien equipado y
+              con todo lo necesario para que entrenes sin límites. Cardio,
+              musculación, outdoor y más.
+            </p>
+          </div>
+        </div>
+
+        <!-- Más imágenes del actual gimnasio -->
+        <div
+          class="grid sm:grid-cols-2 md:grid-cols-3 gap-6 mt-10 diagonal-slide"
+        >
+          <img
+            src="instalaciones/actual-2.webp"
+            alt="Paralelas exteriores verde flúor"
+            class="rounded-2xl shadow-lg img-hover cursor-pointer aspect-[4/3] object-cover w-full"
+            onclick="openLightbox(4)"
+            tabindex="0"
+            aria-label="Ver imagen ampliada"
+          />
+          <img
+            src="instalaciones/actual-3.webp"
+            alt="Interior completo del gimnasio"
+            class="rounded-2xl shadow-lg img-hover cursor-pointer aspect-[4/3] object-cover w-full"
+            onclick="openLightbox(5)"
+            tabindex="0"
+            aria-label="Ver imagen ampliada"
+          />
+          <img
+            src="instalaciones/actual-4.webp"
+            alt="Zona de lockers y máquinas"
+            class="rounded-2xl shadow-lg img-hover cursor-pointer aspect-[4/3] object-cover w-full"
+            onclick="openLightbox(6)"
+            tabindex="0"
+            aria-label="Ver imagen ampliada"
+          />
+          <img
+            src="instalaciones/actual-6.webp"
+            alt="Entrada al gimnasio con cartel"
+            class="rounded-2xl shadow-lg img-hover cursor-pointer aspect-[4/3] object-cover w-full"
+            onclick="openLightbox(7)"
+            tabindex="0"
+            aria-label="Ver imagen ampliada"
+          />
+          <img
+            src="instalaciones/asctual-5.webp"
+            alt="Zona elevada con bicicletas"
+            class="rounded-2xl shadow-lg img-hover cursor-pointer aspect-[4/3] object-cover w-full"
+            onclick="openLightbox(8)"
+            tabindex="0"
+            aria-label="Ver imagen ampliada"
+          />
+          <img
+            src="instalaciones/Contruccion-actual.webp"
+            alt="Construcción de ampliación interior"
+            class="rounded-2xl shadow-lg img-hover cursor-pointer aspect-[4/3] object-cover w-full"
+            onclick="openLightbox(9)"
+            tabindex="0"
+            aria-label="Ver imagen ampliada"
+          />
+          <img
+            src="instalaciones/contruccion-actual2jpg.webp"
+            alt="Vista exterior de ampliación"
+            class="rounded-2xl shadow-lg img-hover cursor-pointer aspect-[4/3] object-cover w-full"
+            onclick="openLightbox(10)"
+            tabindex="0"
+            aria-label="Ver imagen ampliada"
+          />
+        </div>
+      </section>
+    </main>
+
+    <footer
+      class="text-center py-8 border-t border-slate-800 text-sm text-slate-400"
+    >
+      © 2025 Actitud Fitness Durazno. Todos los derechos reservados.
+    </footer>
+
+    <!-- Lightbox Overlay (igual al de Rafa, multi-imagen) -->
+    <div
+      id="lightbox"
+      class="hidden fixed inset-0 z-[999] bg-black/80 flex items-center justify-center fade-in"
+    >
+      <button
+        id="lightbox-close"
+        aria-label="Cerrar"
+        class="absolute top-6 right-8 text-white text-3xl font-bold hover:text-blue-400 hover:scale-110 transition"
+        style="z-index: 10"
+      >
+        ✕
+      </button>
+      <button
+        id="lightbox-prev"
+        aria-label="Anterior"
+        class="absolute left-4 md:left-16 text-white/70 text-4xl font-bold hover:text-blue-400 transition select-none"
+        style="z-index: 10"
+      >
+        &#8592;
+      </button>
+      <button
+        id="lightbox-next"
+        aria-label="Siguiente"
+        class="absolute right-4 md:right-16 text-white/70 text-4xl font-bold hover:text-blue-400 transition select-none"
+        style="z-index: 10"
+      >
+        &#8594;
+      </button>
+      <img
+        id="lightbox-img"
+        src=""
+        alt=""
+        class="rounded-3xl shadow-2xl max-h-[85vh] max-w-[95vw] bg-slate-900 slide-in object-contain"
+      />
+      <div
+        id="lightbox-caption"
+        class="absolute bottom-10 left-1/2 -translate-x-1/2 bg-black/60 px-6 py-2 rounded-xl text-white text-center text-base font-medium shadow-lg pointer-events-none"
+      ></div>
+    </div>
+
+    <script>
+      // Array de imágenes para el lightbox (orden exacto arriba)
+      const images = [
+        { src: "instalaciones/primero1.webp", alt: "Primer gimnasio en casa" },
+        {
+          src: "instalaciones/primero-2.webp",
+          alt: "Inicio de los entrenamientos",
+        },
+        {
+          src: "instalaciones/Segundo1.webp",
+          alt: "Segundo espacio del gimnasio",
+        },
+        { src: "instalaciones/actual-1.webp", alt: "Gimnasio actual" },
+        {
+          src: "instalaciones/actual-2.webp",
+          alt: "Paralelas exteriores verde flúor",
+        },
+        {
+          src: "instalaciones/actual-3.webp",
+          alt: "Interior completo del gimnasio",
+        },
+        {
+          src: "instalaciones/actual-4.webp",
+          alt: "Zona de lockers y máquinas",
+        },
+        {
+          src: "instalaciones/actual-6.webp",
+          alt: "Entrada al gimnasio con cartel",
+        },
+        {
+          src: "instalaciones/asctual-5.webp",
+          alt: "Zona elevada con bicicletas",
+        },
+        {
+          src: "instalaciones/Contruccion-actual.webp",
+          alt: "Construcción de ampliación interior",
+        },
+        {
+          src: "instalaciones/contruccion-actual2jpg.webp",
+          alt: "Vista exterior de ampliación",
+        },
+      ];
+      let current = 0;
+
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImg = document.getElementById("lightbox-img");
+      const lightboxCaption = document.getElementById("lightbox-caption");
+      const closeBtn = document.getElementById("lightbox-close");
+      const prevBtn = document.getElementById("lightbox-prev");
+      const nextBtn = document.getElementById("lightbox-next");
+
+      function openLightbox(idx) {
+        current = idx;
+        showLightbox();
+        document.body.style.overflow = "hidden";
+      }
+      function showLightbox() {
+        lightbox.classList.remove("hidden");
+        lightboxImg.classList.remove("slide-in");
+        setTimeout(() => lightboxImg.classList.add("slide-in"), 10);
+        lightboxImg.src = images[current].src;
+        lightboxImg.alt = images[current].alt;
+        lightboxCaption.textContent = images[current].alt;
+        closeBtn.focus();
+      }
+      function closeLightbox() {
+        lightbox.classList.add("hidden");
+        lightboxImg.src = "";
+        document.body.style.overflow = "";
+      }
+      function next() {
+        current = (current + 1) % images.length;
+        showLightbox();
+      }
+      function prev() {
+        current = (current - 1 + images.length) % images.length;
+        showLightbox();
+      }
+
+      closeBtn.onclick = closeLightbox;
+      prevBtn.onclick = prev;
+      nextBtn.onclick = next;
+      lightbox.onclick = (e) => {
+        if (e.target === lightbox) closeLightbox();
+      };
+      document.addEventListener("keydown", (e) => {
+        if (lightbox.classList.contains("hidden")) return;
+        if (e.key === "Escape") closeLightbox();
+        if (e.key === "ArrowRight") next();
+        if (e.key === "ArrowLeft") prev();
+      });
+      document
+        .querySelectorAll("img[onclick^='openLightbox']")
+        .forEach((img, idx) => {
+          img.addEventListener("keydown", function (e) {
+            if (e.key === "Enter" || e.key === " ") {
+              openLightbox(idx);
+            }
+          });
+        });
+    </script>
+  </body>
+</html>

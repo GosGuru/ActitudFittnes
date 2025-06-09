@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Conocé la historia inspiradora de Rafael Barragan, fundador de Actitud Fitness Durazno. De la tierra al gimnasio, un ejemplo de superación, esfuerzo y constancia."
+    />
+    <meta
+      name="keywords"
+      content="Rafael Barragan, historia personal, gimnasio Durazno, superación, fitness, entrenador personal"
+    />
+    <meta name="author" content="Actitud Fitness Durazno" />
+    <title>La historia de Rafael Barragan - Actitud Fitness Durazno</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @keyframes diagonal-slide {
+        0% {
+          opacity: 0;
+          transform: translate(-60px, 60px) scale(0.97);
+        }
+        100% {
+          opacity: 1;
+          transform: translate(0, 0) scale(1);
+        }
+      }
+      .diagonal-slide {
+        animation: diagonal-slide 1s cubic-bezier(0.65, 0, 0.35, 1) both;
+      }
+      .img-hover {
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s;
+      }
+      .img-hover:hover {
+        transform: scale(1.06) rotate(-2deg);
+        box-shadow: 0 12px 38px 0 rgba(225, 29, 72, 0.18),
+          0 4px 12px rgba(16, 185, 129, 0.12);
+        z-index: 2;
+      }
+      /* Lightbox Animations */
+      .fade-in {
+        animation: fadeIn 0.25s both;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      .slide-in {
+        animation: slideIn 0.25s both;
+      }
+      @keyframes slideIn {
+        from {
+          transform: scale(0.97) translateY(30px);
+          opacity: 0.2;
+        }
+        to {
+          transform: scale(1) translateY(0);
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-[#0F172A] text-[#F1F5F9] font-sans">
+    <!-- Header simple -->
+    <header
+      class="w-full bg-[#0F172A]/80 backdrop-blur z-50 border-b border-white/10 px-4 py-3 sm:px-6 sm:py-4"
+    >
+      <div
+        class="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-0"
+      >
+        <!-- Volver al sitio con flecha y hover azul -->
+        <a
+          href="sobrenosotros.html"
+          class="flex items-center gap-1 text-white text-base font-semibold hover:text-blue-500 transition group focus:outline-none"
+        >
+          <span class="flex items-center justify-center h-7">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              stroke="currentColor"
+              class="w-5 h-5 group-hover:-translate-x-1 transition"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M15.75 19.5L8.25 12l7.5-7.5"
+              />
+            </svg>
+          </span>
+          <span class="pt-[2px]">Volver al sitio</span>
+        </a>
+
+        <!-- Logo y nombre gym -->
+        <div class="flex items-center gap-3 mt-0 sm:mt-0">
+          <span
+            class="flex items-center justify-center w-11 h-11 bg-[#0F172A] rounded-full border-2 border-yellow-400 shadow-md"
+          >
+            <!-- PNG o WEBP con fondo transparente recomendado -->
+            <img
+              src="assets/Favicon.webp"
+              alt="Logo Actitud Fitness Durazno"
+              class="w-9 h-9 object-contain rounded-full"
+            />
+          </span>
+          <div class="flex flex-col leading-tight text-center sm:text-left">
+            <span
+              class="text-yellow-400 text-base font-black tracking-widest"
+              style="font-family: 'Montserrat', Arial, sans-serif"
+              >ACTITUD FITNESS</span
+            >
+            <span
+              class="text-white text-lg sm:text-xl font-black tracking-wide -mt-1"
+              style="font-family: 'Montserrat', Arial, sans-serif"
+              >DURAZNO</span
+            >
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="pt-16 px-6 pb-24">
+      <section class="max-w-4xl mx-auto text-center mb-16 diagonal-slide">
+        <h1 class="text-4xl sm:text-5xl font-bold mb-4">
+          La Historia de Rafael Barragan
+        </h1>
+        <p class="text-slate-300 max-w-2xl mx-auto text-lg leading-relaxed">
+          Fundador de Actitud Fitness Durazno, Rafael es un ejemplo de esfuerzo,
+          constancia y pasión por el entrenamiento. Esta es su historia más
+          íntima.
+        </p>
+      </section>
+
+      <!-- Grid moderno de biografía -->
+      <section class="max-w-6xl mx-auto mb-20">
+        <div class="flex flex-col md:flex-row gap-8 items-stretch">
+          <!-- Imagen principal grande -->
+          <div
+            class="flex-1 flex justify-center items-center diagonal-slide"
+            style="animation-delay: 0.08s"
+          >
+            <img
+              src="assets/Biografía.rafa/foto1.webp"
+              alt="Rafa en el gimnasio con certificado"
+              class="img-hover rounded-3xl shadow-2xl aspect-[4/5] object-cover w-full max-w-[480px] min-h-[340px] bg-slate-700 cursor-pointer"
+              loading="lazy"
+              onclick="openLightbox(0)"
+              tabindex="0"
+              aria-label="Ver foto en grande"
+            />
+          </div>
+          <!-- Columna de imágenes secundarias -->
+          <div class="flex flex-col gap-8 flex-1 min-w-0">
+            <div class="diagonal-slide" style="animation-delay: 0.18s">
+              <img
+                src="assets/Biografía.rafa/foto2.webp"
+                alt="Rafa trabajando con pala"
+                class="img-hover rounded-2xl shadow-xl aspect-[16/10] object-cover w-full max-w-[370px] mx-auto min-h-[180px] bg-slate-700 cursor-pointer"
+                loading="lazy"
+                onclick="openLightbox(1)"
+                tabindex="0"
+                aria-label="Ver foto en grande"
+              />
+            </div>
+            <div class="diagonal-slide" style="animation-delay: 0.26s">
+              <img
+                src="assets/Biografía.rafa/foto3.webp"
+                alt="Rafa trabajando en obra"
+                class="img-hover rounded-2xl shadow-xl aspect-[16/10] object-cover w-full max-w-[370px] mx-auto min-h-[180px] bg-slate-700 cursor-pointer"
+                loading="lazy"
+                onclick="openLightbox(2)"
+                tabindex="0"
+                aria-label="Ver foto en grande"
+              />
+            </div>
+            <div class="diagonal-slide" style="animation-delay: 0.34s">
+              <img
+                src="assets/Biografía.rafa/foto4.webp"
+                alt="Rafa con todas sus medallas"
+                class="img-hover rounded-2xl shadow-xl aspect-[16/10] object-cover w-full max-w-[370px] mx-auto min-h-[180px] bg-slate-700 cursor-pointer"
+                loading="lazy"
+                onclick="openLightbox(3)"
+                tabindex="0"
+                aria-label="Ver foto en grande"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Texto con fondo redondeado y blur -->
+      <section
+        class="max-w-3xl mx-auto text-slate-300 space-y-6 diagonal-slide"
+      >
+        <div class="inline-block w-full">
+          <div
+            class="mx-auto px-6 py-4 rounded-2xl shadow-md bg-white/10 backdrop-blur-sm border border-white/10 max-w-fit mb-4"
+            style="min-width: 260px"
+          >
+            <h2 class="text-2xl font-bold text-white">
+              De la tierra al gimnasio
+            </h2>
+          </div>
+        </div>
+        <p>
+          Rafael empezó desde muy abajo. Antes de entrenar a otros, trabajó en
+          la calle, cargó materiales, y soñaba con un cambio. Con apenas 18
+          años, compró su primer par de mancuernas y empezó a entrenar en el
+          patio de su casa.
+        </p>
+        <p>
+          Con esfuerzo, formó su propio gimnasio. No tenía recursos, pero sí
+          visión y disciplina. Día a día fue ganando fuerza y clientes,
+          formándose como entrenador y compitiendo a nivel nacional.
+        </p>
+        <p>
+          Hoy, con decenas de medallas en el pecho y una comunidad que lo
+          respalda, sigue entrenando con la misma energía que aquel joven
+          soñador. Su historia inspira a cada persona que entra al gimnasio: acá
+          se viene a superarse.
+        </p>
+      </section>
+    </main>
+
+    <footer
+      class="text-center py-8 border-t border-slate-800 text-sm text-slate-400"
+    >
+      © 2025 Actitud Fitness Durazno. Todos los derechos reservados.
+    </footer>
+
+    <!-- Lightbox Overlay -->
+    <div
+      id="lightbox"
+      class="hidden fixed inset-0 z-[999] bg-black/80 flex items-center justify-center fade-in"
+    >
+      <button
+        id="lightbox-close"
+        aria-label="Cerrar"
+        class="absolute top-6 right-8 text-white text-3xl font-bold hover:scale-110 transition"
+        style="z-index: 10"
+      >
+        ✕
+      </button>
+      <button
+        id="lightbox-prev"
+        aria-label="Anterior"
+        class="absolute left-4 md:left-16 text-white/70 text-4xl font-bold hover:text-pink-500 transition select-none"
+        style="z-index: 10"
+      >
+        &#8592;
+      </button>
+      <button
+        id="lightbox-next"
+        aria-label="Siguiente"
+        class="absolute right-4 md:right-16 text-white/70 text-4xl font-bold hover:text-pink-500 transition select-none"
+        style="z-index: 10"
+      >
+        &#8594;
+      </button>
+      <img
+        id="lightbox-img"
+        src=""
+        alt=""
+        class="rounded-3xl shadow-2xl max-h-[85vh] max-w-[95vw] bg-slate-900 slide-in object-contain"
+      />
+      <div
+        id="lightbox-caption"
+        class="absolute bottom-10 left-1/2 -translate-x-1/2 bg-black/60 px-6 py-2 rounded-xl text-white text-center text-base font-medium shadow-lg pointer-events-none"
+      ></div>
+    </div>
+
+    <script>
+      // Imagenes y captions
+      const images = [
+        {
+          src: "assets/Biografía.rafa/foto1.webp",
+          alt: "Certificado Rafa, #2 GYM",
+        },
+        {
+          src: "assets/Biografía.rafa/foto2.webp",
+          alt: "Construyendo un sueño...",
+        },
+        {
+          src: "assets/Biografía.rafa/foto3.webp",
+          alt: "Perseverancia y trabajo duro...",
+        },
+        {
+          src: "assets/Biografía.rafa/foto4.webp",
+          alt: "Logros... ¡Decenas de medallas!",
+        },
+      ];
+      let current = 0;
+
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImg = document.getElementById("lightbox-img");
+      const lightboxCaption = document.getElementById("lightbox-caption");
+      const closeBtn = document.getElementById("lightbox-close");
+      const prevBtn = document.getElementById("lightbox-prev");
+      const nextBtn = document.getElementById("lightbox-next");
+
+      function openLightbox(idx) {
+        current = idx;
+        showLightbox();
+        document.body.style.overflow = "hidden";
+      }
+      function showLightbox() {
+        lightbox.classList.remove("hidden");
+        lightboxImg.classList.remove("slide-in");
+        setTimeout(() => lightboxImg.classList.add("slide-in"), 10);
+        lightboxImg.src = images[current].src;
+        lightboxImg.alt = images[current].alt;
+        lightboxCaption.textContent = images[current].alt;
+        // Focus para accesibilidad
+        closeBtn.focus();
+      }
+      function closeLightbox() {
+        lightbox.classList.add("hidden");
+        lightboxImg.src = "";
+        document.body.style.overflow = "";
+      }
+      function next() {
+        current = (current + 1) % images.length;
+        showLightbox();
+      }
+      function prev() {
+        current = (current - 1 + images.length) % images.length;
+        showLightbox();
+      }
+
+      // Eventos
+      closeBtn.onclick = closeLightbox;
+      prevBtn.onclick = prev;
+      nextBtn.onclick = next;
+      lightbox.onclick = (e) => {
+        if (e.target === lightbox) closeLightbox();
+      };
+      document.addEventListener("keydown", (e) => {
+        if (lightbox.classList.contains("hidden")) return;
+        if (e.key === "Escape") closeLightbox();
+        if (e.key === "ArrowRight") next();
+        if (e.key === "ArrowLeft") prev();
+      });
+      // Focus con TAB en botones del lightbox
+      [closeBtn, prevBtn, nextBtn].forEach((btn) => {
+        btn.onkeydown = function (e) {
+          if (e.key === "Tab") e.stopPropagation();
+        };
+      });
+
+      // Acceso por teclado a imágenes (enter)
+      document
+        .querySelectorAll("img[onclick^='openLightbox']")
+        .forEach((img, idx) => {
+          img.addEventListener("keydown", function (e) {
+            if (e.key === "Enter" || e.key === " ") {
+              openLightbox(idx);
+            }
+          });
+        });
+    </script>
+  </body>
+</html>

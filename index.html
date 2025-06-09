@@ -42,119 +42,60 @@
   </head>
   <body class="bg-[#0F172A] text-[#F1F5F9] font-sans">
     <!-- Header -->
-    <header
-      class="fixed top-0 left-0 w-full bg-[#0F172A]/80 backdrop-blur z-50 border-b border-white/10"
-    >
-      <div
-        class="max-w-6xl mx-auto flex items-center justify-between px-4 py-4"
-      >
-        <a href="./index.html"
-          ><img
-            src="assets/Logo.svg"
-            alt="Logotipo de Actitud Fitness Durazno"
-            class="h-12 w-auto"
-        /></a>
-        <nav class="hidden md:flex space-x-6">
-          <a href="#inicio" class="hover:text-[#E11D48] transition-colors"
-            >Inicio</a
-          >
-          <a
-            href="./sobrenosotros.html"
-            class="hover:text-[#E11D48] transition-colors"
-            >Nosotros</a
-          >
-          <a href="#servicios" class="hover:text-[#E11D48] transition-colors"
-            >Servicios</a
-          >
-          <a href="#clases" class="hover:text-[#E11D48] transition-colors"
-            >Clases</a
-          >
-          <a
-            href="#instalaciones"
-            class="hover:text-[#E11D48] transition-colors"
-            >Instalaciones</a
-          >
-          <a href="#ubicacion" class="hover:text-[#E11D48] transition-colors"
-            >Ubicación</a
-          >
-          <a href="#contacto" class="hover:text-[#E11D48] transition-colors"
-            >Contacto</a
-          >
+    <header class="fixed top-0 left-0 w-full bg-[#0F172A]/80 backdrop-blur z-50 border-b border-white/10">
+      <div class="max-w-6xl mx-auto flex items-center justify-between px-4 py-4">
+        <!-- Logo -->
+        <a href="./index.html">
+          <img src="assets/Logo.svg" alt="Logotipo de Actitud Fitness Durazno" class="h-12 w-auto" />
+        </a>
+    
+        <!-- Navegación desktop -->
+        <nav class="hidden md:flex items-center space-x-6 text-white text-sm font-medium">
+          <a href="#inicio" class="hover:text-[#E11D48] transition-colors">Inicio</a>
+          <a href="./sobrenosotros.html" class="hover:text-[#E11D48] transition-colors">Nosotros</a>
+          <a href="instalaciones.html" class="hover:text-[#E11D48] transition">Instalaciones</a>
+          <a href="#servicios" class="hover:text-[#E11D48]
+           transition-colors">Servicios</a>
+          <a href="#clases" class="hover:text-[#E11D48] transition-colors">Clases</a>
+          <a href="#instalaciones" class="hover:text-[#E11D48] transition-colors">Instalaciones</a>
+          <a href="#ubicacion" class="hover:text-[#E11D48] transition-colors">Ubicación</a>
+          <a href="#contacto" class="hover:text-[#E11D48] transition-colors">Contacto</a>
+    
+          <!-- CTA visible solo en escritorio -->
+          <a href="#contacto" class="ml-4 px-4 py-2 rounded-full bg-[#E11D48] text-white hover:bg-[#be123c] transition text-sm font-semibold">
+            ¡Inscribite!
+          </a>
         </nav>
-        <button
-          id="hamburgerButton"
-          class="md:hidden focus:outline-none"
-          aria-label="Abrir menú"
-        >
+    
+        <!-- Menú móvil -->
+        <button id="hamburgerButton" class="md:hidden focus:outline-none" aria-label="Abrir menú">
           <div class="hamburger-icon" id="hamburgerIcon">
             <span></span><span></span><span></span>
           </div>
         </button>
       </div>
-      <nav
-        id="mobileMenu"
-        class="hidden md:hidden bg-[#0F172A]/90 border-t border-white/10 pb-4"
-      >
-        <ul class="flex flex-col items-center space-y-4 py-2">
+    
+      <!-- Navegación mobile -->
+      <nav id="mobileMenu" class="hidden md:hidden bg-[#0F172A]/90 border-t border-white/10 pb-4">
+        <ul class="flex flex-col items-center space-y-4 py-4 text-white font-medium">
+          <li><a href="#inicio" class="text-lg hover:text-[#E11D48] transition-colors" onclick="closeMobileMenu()">Inicio</a></li>
+          <li><a href="/sobrenosotros.html" class="text-lg hover:text-[#E11D48] transition-colors" onclick="closeMobileMenu()">Nosotros</a></li>
+          <li><a href="#servicios" class="text-lg hover:text-[#E11D48] transition-colors" onclick="closeMobileMenu()">Servicios</a></li>
+          <li><a href="#clases" class="text-lg hover:text-[#E11D48] transition-colors" onclick="closeMobileMenu()">Clases</a></li>
+          <li><a href="#instalaciones" class="text-lg hover:text-[#E11D48] transition-colors" onclick="closeMobileMenu()">Instalaciones</a></li>
+          <li><a href="#ubicacion" class="text-lg hover:text-[#E11D48] transition-colors" onclick="closeMobileMenu()">Ubicación</a></li>
+          <li><a href="#contacto" class="text-lg hover:text-[#E11D48] transition-colors" onclick="closeMobileMenu()">Contacto</a></li>
+    
+          <!-- CTA también en mobile -->
           <li>
-            <a
-              href="#inicio"
-              class="text-lg hover:text-[#E11D48] transition-colors"
-              onclick="closeMobileMenu()"
-              >Inicio</a
-            >
-          </li>
-          <li>
-            <a
-              href="/sobrenosotros.html"
-              class="text-lg hover:text-[#E11D48] transition-colors"
-              onclick="closeMobileMenu()"
-              >Nosotros</a
-            >
-          </li>
-          <li>
-            <a
-              href="#servicios"
-              class="text-lg hover:text-[#E11D48] transition-colors"
-              onclick="closeMobileMenu()"
-              >Servicios</a
-            >
-          </li>
-          <li>
-            <a
-              href="#clases"
-              class="text-lg hover:text-[#E11D48] transition-colors"
-              onclick="closeMobileMenu()"
-              >Clases</a
-            >
-          </li>
-          <li>
-            <a
-              href="#instalaciones"
-              class="text-lg hover:text-[#E11D48] transition-colors"
-              onclick="closeMobileMenu()"
-              >Instalaciones</a
-            >
-          </li>
-          <li>
-            <a
-              href="#ubicacion"
-              class="text-lg hover:text-[#E11D48] transition-colors"
-              onclick="closeMobileMenu()"
-              >Ubicación</a
-            >
-          </li>
-          <li>
-            <a
-              href="#contacto"
-              class="text-lg hover:text-[#E11D48] transition-colors"
-              onclick="closeMobileMenu()"
-              >Contacto</a
-            >
+            <a href="#contacto" class="inline-block mt-2 px-4 py-2 rounded-full bg-[#E11D48] text-white hover:bg-[#be123c] transition text-base font-semibold">
+              ¡Inscribite!
+            </a>
           </li>
         </ul>
       </nav>
     </header>
+    
 
   <!-- Hero -->
 <section id="inicio" class="pt-32 pb-20 px-6 text-center relative overflow-hidden">
@@ -508,9 +449,9 @@
             <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-slate-900" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M4 7V5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v2"/><rect width="16" height="12" x="4" y="7" rx="2"/><path d="M8 11h8"/><path d="M8 15h6"/></svg>
           </span>
           <img
-            src="./assets/Servicios/FIttnes2.webp"
+            src="./assets/Servicios/Instituto de Formación Fitness.webp"
             alt="Instituto de Formación Fitness"
-            class="w-full rounded-t-2xl object-cover h-48 lg:h-64"
+            class="w-full rounded-t-2xl object-contain h-48 lg:h-64"
           />
           <div class="p-6 flex flex-col gap-4">
             <div>
@@ -680,7 +621,7 @@
           de peso medio, y más de 200 kg en discos y barras olímpicas para que
           entrenes sin límites.
         </p>
-        <div class="grid sm:grid-cols-2 gap-6">
+        <div class="grid justify-center sm:grid-cols-2 gap-6">
           <div>
             <img
               src="./Maquinaria/Pista completa.jpg"
@@ -695,6 +636,8 @@
               class="w-full rounded-lg object-cover shadow-md fade-slide max-h-[282px]"
             />
           </div>
+          <a href="instalaciones.html" class="text-[#E11D48] text-center hover:underline font-medium">Conocé el gimnasio →</a>
+
         </div>
       </div>
     </section>

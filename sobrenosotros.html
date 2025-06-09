@@ -9,15 +9,33 @@
       html {
         scroll-behavior: smooth;
       }
+
       .fade-slide {
         opacity: 0;
         transform: translateY(40px);
         transition: opacity 0.6s ease-out, transform 0.6s ease-out;
       }
+
       .fade-slide.show {
         opacity: 1;
         transform: translateY(0);
       }
+
+      @keyframes diagonal-slide {
+        0% {
+          opacity: 0;
+          transform: translate(-40px, 40px);
+        }
+        100% {
+          opacity: 1;
+          transform: translate(0, 0);
+        }
+      }
+
+      .diagonal-slide {
+        animation: diagonal-slide 1s ease-out both;
+      }
+
       .hamburger-icon span {
         display: block;
         width: 24px;
@@ -26,12 +44,15 @@
         margin: 5px 0;
         transition: all 0.3s ease-in-out;
       }
+
       .hamburger-icon.open span:nth-child(1) {
         transform: translateY(8px) rotate(45deg);
       }
+
       .hamburger-icon.open span:nth-child(2) {
         opacity: 0;
       }
+
       .hamburger-icon.open span:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
       }
@@ -39,166 +60,71 @@
   </head>
   <body class="bg-[#0F172A] text-[#F1F5F9] font-sans">
     <!-- Header -->
-    <header
-      class="fixed top-0 left-0 w-full bg-[#0F172A]/80 backdrop-blur z-50 border-b border-white/10"
-    >
-      <div
-        class="max-w-6xl mx-auto flex items-center justify-between px-4 py-4"
-      >
-        <a href="index.html"
-          ><img
-            src="assets/Logo.svg"
-            alt="Logotipo Actitud Fitness"
-            class="h-12 w-auto"
-        /></a>
-        <nav class="hidden md:flex space-x-6">
-          <a
-            href="index.html#inicio"
-            class="hover:text-[#E11D48] transition-colors"
-            >Inicio</a
-          >
-          <a
-            href="./sobrenosotros.html"
-            class="hover:text-[#E11D48] transition-colors"
-          >
-            Nosotros</a
-          >
-          <a
-            href="index.html#servicios"
-            class="hover:text-[#E11D48] transition-colors"
-            >Servicios</a
-          >
-          <a
-            href="index.html#clases"
-            class="hover:text-[#E11D48] transition-colors"
-            >Clases</a
-          >
-          <a
-            href="index.html#instalaciones"
-            class="hover:text-[#E11D48] transition-colors"
-            >Instalaciones</a
-          >
-          <a
-            href="index.html#ubicacion"
-            class="hover:text-[#E11D48] transition-colors"
-            >Ubicación</a
-          >
-          <a
-            href="index.html#contacto"
-            class="hover:text-[#E11D48] transition-colors"
-            >Contacto</a
-          >
-        </nav>
-        <button
-          id="hamburgerButton"
-          class="md:hidden focus:outline-none"
-          aria-label="Abrir menú"
-        >
-          <div class="hamburger-icon" id="hamburgerIcon">
-            <span></span><span></span><span></span>
-          </div>
-        </button>
-      </div>
-      <nav
-        id="mobileMenu"
-        class="hidden md:hidden bg-[#0F172A]/90 border-t border-white/10 pb-4"
-      >
-        <ul class="flex flex-col items-center space-y-4 py-2">
-          <li>
-            <a
-              href="index.html#inicio"
-              class="text-lg hover:text-[#E11D48] transition-colors"
-              onclick="closeMobileMenu()"
-              >Inicio</a
-            >
-          </li>
-          <li>
-            <a
-              href="nosotros.html"
-              class="text-lg hover:text-[#E11D48] transition-colors"
-              onclick="closeMobileMenu()"
-              >Sobre Nosotros</a
-            >
-          </li>
-          <li>
-            <a
-              href="index.html#servicios"
-              class="text-lg hover:text-[#E11D48] transition-colors"
-              onclick="closeMobileMenu()"
-              >Servicios</a
-            >
-          </li>
-          <li>
-            <a
-              href="index.html#clases"
-              class="text-lg hover:text-[#E11D48] transition-colors"
-              onclick="closeMobileMenu()"
-              >Clases</a
-            >
-          </li>
-          <li>
-            <a
-              href="index.html#instalaciones"
-              class="text-lg hover:text-[#E11D48] transition-colors"
-              onclick="closeMobileMenu()"
-              >Instalaciones</a
-            >
-          </li>
-          <li>
-            <a
-              href="index.html#ubicacion"
-              class="text-lg hover:text-[#E11D48] transition-colors"
-              onclick="closeMobileMenu()"
-              >Ubicación</a
-            >
-          </li>
-          <li>
-            <a
-              href="index.html#contacto"
-              class="text-lg hover:text-[#E11D48] transition-colors"
-              onclick="closeMobileMenu()"
-              >Contacto</a
-            >
-          </li>
-        </ul>
-      </nav>
-    </header>
+<header class="w-full bg-[#0F172A]/80 backdrop-blur z-50 border-b border-white/10 px-4 py-3 sm:px-6 sm:py-4">
+  <div class="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-0">
+    <!-- Volver al sitio con flecha y hover azul -->
+    <a href="index.html" class="flex items-center gap-1 text-white text-base font-semibold hover:text-blue-500 transition group focus:outline-none">
+      <span class="flex items-center justify-center h-7">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+             stroke-width="2" stroke="currentColor" class="w-5 h-5 group-hover:-translate-x-1 transition">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+        </svg>
+      </span>
+      <span class="pt-[2px]">Volver al sitio</span>
+    </a>
 
-    <main class="pt-32">
+    <!-- Logo y nombre gym -->
+    <div class="flex items-center gap-3 mt-0 sm:mt-0">
+      <span class="flex items-center justify-center w-11 h-11 bg-[#0F172A] rounded-full border-2 border-yellow-400 shadow-md">
+        <!-- PNG o WEBP con fondo transparente recomendado -->
+        <img src="assets/Favicon.webp" alt="Logo Actitud Fitness Durazno"
+             class="w-9 h-9 object-contain rounded-full" />
+      </span>
+      <div class="flex flex-col leading-tight text-center sm:text-left">
+        <span class="text-yellow-400 text-base font-black tracking-widest"
+              style="font-family: 'Montserrat', Arial, sans-serif;">ACTITUD FITNESS</span>
+        <span class="text-white text-lg sm:text-xl font-black tracking-wide -mt-1"
+              style="font-family: 'Montserrat', Arial, sans-serif;">DURAZNO</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+
+    <main class="pt-0 sm:pt-[0]">
       <!-- Historia de Actitud Fitness -->
-      <section id="historia" class="py-20 px-6 fade-slide">
+      <section
+        id="historia"
+        class="py-20 px-6 diagonal-slide bg-gradient-to-br from-[#0F172A] via-[#1E293B] to-[#0F172A]"
+      >
         <div class="max-w-5xl mx-auto text-center">
-          <h2 class="text-3xl sm:text-4xl font-bold mb-6">Nuestra Historia</h2>
-          <p class="text-slate-300 mb-10 max-w-3xl mx-auto">
+          <h2
+            class="text-4xl sm:text-5xl font-extrabold mb-6 tracking-tight text-white"
+          >
+            Nuestra Historia
+          </h2>
+          <p
+            class="text-slate-300 mb-10 max-w-3xl mx-auto leading-relaxed text-base sm:text-lg"
+          >
             Actitud Fitness comenzó hace más de una década cuando nuestro
             fundador,
             <span class="text-[#E11D48] font-semibold">Rafael Barragan</span>,
             con solo 18 años, soñaba con crear un espacio donde el entrenamiento
-            y la comunidad fueran una sola cosa. Tras superar dificultades
-            personales y compartir su pasión con amigos, abrió las puertas de
-            este gimnasio en Durazno. Desde entonces, hemos crecido junto a la
-            comunidad y mantenemos vivo ese espíritu de superación.<br /><br />
-            “Empecé entrenando sin casi recursos, pero la pasión y la disciplina
-            me hicieron persistir. Hoy, quiero compartir todo lo que aprendí
-            para que otros también puedan superar sus límites.”
+            y la comunidad fueran una sola cosa...
           </p>
-          <!-- Galería de historia con simetría y enfoque UX/UI -->
+
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            <!-- Imagen grande vertical a la izquierda -->
             <img
               src="assets/GymActual.webp"
               alt="Instalaciones actuales del gimnasio"
               class="w-full h-full object-cover rounded-lg shadow-md row-span-2"
             />
-
-            <!-- Imagen del fundador en la playa -->
             <img
               src="assets/18Years.webp"
               alt="Fundador joven entrenando"
               class="w-full rounded-lg shadow-md"
             />
-
-            <!-- Imagen del primer gimnasio -->
             <img
               src="assets/PrimerGym.webp"
               alt="Primer gimnasio histórico"
@@ -210,27 +136,38 @@
 
       <!-- Fundador -->
       <section id="fundador" class="py-20 px-6 bg-slate-800 fade-slide">
-        <div class="max-w-4xl mx-auto text-center">
-          <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-slate-100">
-            Conocé al Fundador
-          </h2>
-          <div class="flex flex-col sm:flex-row items-center gap-6">
+        <div
+          class="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-8"
+        >
+          <!-- Imagen del fundador -->
+          <div class="shrink-0">
             <img
               src="assets/Rafa-Actual.webp"
               alt="Rafael Barragan - Fundador"
-              class="w-48 h-48 rounded-full border-4 border-white/20 shadow-lg"
+              class="w-40 h-40 sm:w-48 sm:h-48 rounded-full border-4 border-white/20 shadow-lg object-cover object-top"
             />
-            <div class="text-left">
-              <h3 class="text-2xl font-semibold text-white mb-2">
-                Rafael Barragan
-              </h3>
-              <p class="text-slate-300">
-                Empezó entrenando a los 18 años en condiciones precarias, pero
-                su pasión lo llevó a formarse como entrenador y competidor. Hoy
-                es el corazón de Actitud Fitness y guía con su experiencia a
-                cada miembro que llega.
-              </p>
-            </div>
+          </div>
+
+          <!-- Información -->
+          <div class="text-center md:text-left">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-2 text-white">
+              Conocé al Fundador
+            </h2>
+            <h3 class="text-2xl font-semibold text-white mb-1">
+              Rafael Barragan
+            </h3>
+            <p class="text-slate-300 leading-relaxed max-w-xl">
+              Empezó entrenando a los 18 años en condiciones precarias, pero su
+              pasión lo llevó a formarse como entrenador y competidor. Hoy, es
+              el corazón de Actitud Fitness y guía con su experiencia a cada
+              miembro que llega al gimnasio con ganas de superarse.
+            </p>
+            <a
+              href="rafa.html"
+              class="inline-block mt-4 text-[#E11D48] hover:underline font-medium"
+            >
+              Ver más sobre Rafael →
+            </a>
           </div>
         </div>
       </section>
@@ -245,55 +182,28 @@
             Conocé a los entrenadores expertos que te acompañarán en cada paso.
           </p>
           <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
-            <!-- Profesor 1: Fundador -->
-            <div
-              class="bg-slate-700 rounded-xl p-6 shadow hover:shadow-lg transition"
-            >
-              <img
-                src="assets/Rafa-Actual.webp"
-                alt="Rafael Barragan"
-                class="w-24 h-24 rounded-full mx-auto mb-4 object-cover object-top"
-              />
-              <h3 class="text-xl font-semibold text-white mb-1">
-                Rafael Barragan
-              </h3>
-              <p class="text-slate-300 text-sm">
-                Fundador y Entrenador Principal
-              </p>
-            </div>
-            <!-- Profesor 2: placeholder
-            <div
-              class="bg-slate-700 rounded-xl p-6 shadow hover:shadow-lg transition"
-            >
-              <img
-                src="assets/profesor2.jpg"
-                alt="Profesor 2"
-                class="w-24 h-24 rounded-full mx-auto mb-4"
-              />
-              <h3 class="text-xl font-semibold text-white mb-1">María López</h3>
-              <p class="text-slate-300 text-sm">Entrenadora Funcional</p>
-            </div>
-        Profesor 3: placeholder
-            <div
-              class="bg-slate-700 rounded-xl p-6 shadow hover:shadow-lg transition"
-            >
-              <img
-                src="assets/profesor3.jpg"
-                alt="Profesor 3"
-                class="w-24 h-24 rounded-full mx-auto mb-4"
-              />
-              <h3 class="text-xl font-semibold text-white mb-1">
-                Carlos Méndez
-              </h3>
-              <p class="text-slate-300 text-sm">Especialista en Powerlifting</p>
-            </div> -->
-            <!-- Agregar más profesores aquí -->
-          </div>
+         <!-- Profesor 1 -->
+<a href="rafa.html" class="block bg-slate-700 rounded-xl p-6 shadow hover:shadow-lg transition hover:scale-[1.02]">
+  <img
+    src="assets/Rafa-Actual.webp"
+    alt="Rafael Barragan"
+    class="w-24 h-24 rounded-full mx-auto mb-4 object-cover object-top"
+  />
+  <h3 class="text-xl font-semibold text-white mb-1 text-center">
+    Rafael Barragan
+  </h3>
+  <p class="text-slate-300 text-sm text-center">
+    Fundador y Entrenador Principal
+  </p>
+  <p class="text-center mt-2 text-sm text-[#E11D48] hover:underline">
+    Ver más →
+  </p>
+</a>
+
         </div>
       </section>
     </main>
 
-    <!-- Footer -->
     <footer
       class="text-center py-6 border-t border-slate-800 text-sm text-slate-400"
     >
@@ -309,6 +219,7 @@
         },
         { threshold: 0.2 }
       );
+
       document
         .querySelectorAll(".fade-slide")
         .forEach((el) => observer.observe(el));
@@ -316,6 +227,7 @@
       const hamburgerButton = document.getElementById("hamburgerButton");
       const mobileMenu = document.getElementById("mobileMenu");
       const hamburgerIcon = document.getElementById("hamburgerIcon");
+
       hamburgerButton.addEventListener("click", () => {
         mobileMenu.classList.toggle("hidden");
         hamburgerIcon.classList.toggle("open");
@@ -327,6 +239,7 @@
           isExpanded ? "Abrir menú" : "Cerrar menú"
         );
       });
+
       function closeMobileMenu() {
         mobileMenu.classList.add("hidden");
         hamburgerIcon.classList.remove("open");
