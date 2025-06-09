@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inscripción | Actitud Fitness Durazno</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body {
+        font-family: "Montserrat", Arial, sans-serif;
+        background: #0f172a;
+        min-height: 100vh;
+      }
+    </style>
+  </head>
+  <body class="text-[#1e293b]">
+    <!-- HEADER con volver al sitio y logo -->
+    <header
+      class="w-full bg-[#0F172A]/80 backdrop-blur z-50 border-b border-white/10 px-4 py-3 sm:px-6 sm:py-4"
+    >
+      <div
+        class="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-0"
+      >
+        <!-- Volver al sitio -->
+        <a
+          href="index.html"
+          class="flex items-center gap-1 text-white text-base font-semibold hover:text-blue-500 transition group focus:outline-none"
+        >
+          <span class="flex items-center justify-center h-7">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              stroke="currentColor"
+              class="w-5 h-5 group-hover:-translate-x-1 transition"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M15.75 19.5L8.25 12l7.5-7.5"
+              />
+            </svg>
+          </span>
+          <span class="pt-[2px]">Volver al sitio</span>
+        </a>
+        <!-- Logo y nombre gym -->
+        <div class="flex items-center gap-3 mt-0 sm:mt-0">
+          <span
+            class="flex items-center justify-center w-11 h-11 bg-[#0F172A] rounded-full border-2 border-yellow-400 shadow-md"
+          >
+            <img
+              src="assets/favicon.webp"
+              alt="Logo Actitud Fitness Durazno"
+              class="w-9 h-9 object-contain rounded-full"
+            />
+          </span>
+          <div class="flex flex-col leading-tight text-center sm:text-left">
+            <span
+              class="text-yellow-400 text-base font-black tracking-widest"
+              style="font-family: 'Montserrat', Arial, sans-serif"
+              >ACTITUD FITNESS</span
+            >
+            <span
+              class="text-white text-lg sm:text-xl font-black tracking-wide -mt-1"
+              style="font-family: 'Montserrat', Arial, sans-serif"
+              >DURAZNO</span
+            >
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- FORMULARIO -->
+    <main>
+      <section
+        id="inscripcion"
+        class="py-14 px-4 bg-white/10 rounded-2xl shadow-lg max-w-lg mx-auto mt-16 mb-16"
+      >
+        <form
+          id="form-inscripcion"
+          class="flex flex-col gap-4 bg-white rounded-xl p-6 shadow-lg max-w-md mx-auto"
+        >
+          <h2 class="text-2xl font-bold text-center mb-2 text-[#0F172A]">
+            Inscribite fácil
+          </h2>
+          <input
+            type="text"
+            name="nombre"
+            placeholder="Nombre y apellido"
+            required
+            class="p-3 rounded border"
+          />
+          <input
+            type="tel"
+            name="telefono"
+            placeholder="WhatsApp (09x xxx xxx)"
+            required
+            pattern="[0-9]{9,}"
+            class="p-3 rounded border"
+          />
+          <input
+            type="date"
+            name="nacimiento"
+            placeholder="Fecha de nacimiento"
+            required
+            class="p-3 rounded border"
+          />
+          <textarea
+            name="comentarios"
+            placeholder="¿Algo que quieras contarnos? (opcional)"
+            class="p-3 rounded border"
+          ></textarea>
+          <button
+            type="submit"
+            class="bg-green-600 text-white rounded-xl p-3 font-bold hover:bg-green-700 transition"
+          >
+            Enviar inscripción
+          </button>
+        </form>
+      </section>
+    </main>
+
+    <script>
+      document
+        .getElementById("form-inscripcion")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          const nombre = encodeURIComponent(this.nombre.value);
+          const telefono = encodeURIComponent(this.telefono.value);
+          const nacimiento = encodeURIComponent(
+            this.nacimiento.value.split("-").reverse().join("/")
+          ); // dd/mm/yyyy
+          const comentarios = this.comentarios.value.trim();
+
+          let mensaje = "*Nueva inscripción recibida 🚀*%0A";
+          mensaje += `*👤 Nombre:* ${nombre}%0A`;
+          mensaje += `*📱 WhatsApp:* ${telefono}%0A`;
+          mensaje += `*🎂 Fecha de nacimiento:* ${nacimiento}%0A`;
+          if (comentarios) {
+            mensaje += `*📝 Comentarios:* ${encodeURIComponent(
+              comentarios
+            )}%0A`;
+          }
+          mensaje +=
+            "%0APor favor, responder al cliente para completar el alta. 💪";
+
+          window.open(`https://wa.me/59896401296?text=${mensaje}`, "_blank");
+        });
+    </script>
+  </body>
+</html>
