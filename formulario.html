@@ -1,214 +1,496 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Inscripción | Actitud Fitness Durazno</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;900&display=swap" rel="stylesheet"/>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    body { font-family: 'Montserrat', Arial, sans-serif; background: #0f172a; min-height: 100vh; }
-    .tip { font-size: 0.92em; color: #3b82f6; margin-left: 2px; }
-    ::placeholder { color: #94a3b8; }
-    @media (max-width: 520px) {
-      .logo-title { flex-direction: column !important; gap: 4px !important; }
-      .main-card { padding: 0.75rem !important; }
-    }
-  </style>
-</head>
-<body class="text-[#1e293b] bg-[#0f172a]">
-  <!-- HEADER -->
-  <header class="w-full bg-[#0F172A]/80 backdrop-blur border-b border-white/10 px-2 py-3 sm:px-6 sm:py-4">
-    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2 logo-title">
-      <a href="index.html" class="flex items-center gap-1 text-white text-base font-semibold hover:text-blue-500 transition group">
-        <span class="flex items-center justify-center h-7">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5 group-hover:-translate-x-1 transition">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5"/>
-          </svg>
-        </span>
-        <span class="pt-[2px]">Volver al sitio</span>
-      </a>
-      <div class="flex items-center gap-3">
-        <span class="flex items-center justify-center w-11 h-11 bg-[#0F172A] rounded-full border-2 border-yellow-400 shadow-md">
-          <img src="assets/favicon.webp" alt="Logo Actitud Fitness Durazno" class="w-9 h-9 object-contain rounded-full"/>
-        </span>
-        <div class="flex flex-col leading-tight text-center sm:text-left">
-          <span class="text-yellow-400 text-base font-black tracking-widest" style="font-family: 'Montserrat', Arial, sans-serif">ACTITUD FITNESS</span>
-          <span class="text-white text-lg sm:text-xl font-black tracking-wide -mt-1" style="font-family: 'Montserrat', Arial, sans-serif">DURAZNO</span>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inscripción | Actitud Fitness Durazno</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body {
+        font-family: "Montserrat", Arial, sans-serif;
+        background: #0f172a;
+        min-height: 100vh;
+      }
+      .tip {
+        font-size: 0.92em;
+        color: #3b82f6;
+        margin-left: 2px;
+      }
+      ::placeholder {
+        color: #94a3b8;
+      }
+      @media (max-width: 520px) {
+        .logo-title {
+          flex-direction: column !important;
+          gap: 4px !important;
+        }
+        .main-card {
+          padding: 0.75rem !important;
+        }
+      }
+    </style>
+  </head>
+  <body class="text-[#1e293b] bg-[#0f172a]">
+    <!-- HEADER -->
+    <header
+      class="w-full bg-[#0F172A]/80 backdrop-blur border-b border-white/10 px-2 py-3 sm:px-6 sm:py-4"
+    >
+      <div
+        class="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2 logo-title"
+      >
+        <a
+          href="index.html"
+          class="flex items-center gap-1 text-white text-base font-semibold hover:text-blue-500 transition group"
+        >
+          <span class="flex items-center justify-center h-7">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              stroke="currentColor"
+              class="w-5 h-5 group-hover:-translate-x-1 transition"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M15.75 19.5L8.25 12l7.5-7.5"
+              />
+            </svg>
+          </span>
+          <span class="pt-[2px]">Volver al sitio</span>
+        </a>
+        <div class="flex items-center gap-3">
+          <span
+            class="flex items-center justify-center w-11 h-11 bg-[#0F172A] rounded-full border-2 border-yellow-400 shadow-md"
+          >
+            <img
+              src="assets/favicon.webp"
+              alt="Logo Actitud Fitness Durazno"
+              class="w-9 h-9 object-contain rounded-full"
+            />
+          </span>
+          <div class="flex flex-col leading-tight text-center sm:text-left">
+            <span
+              class="text-yellow-400 text-base font-black tracking-widest"
+              style="font-family: 'Montserrat', Arial, sans-serif"
+              >ACTITUD FITNESS</span
+            >
+            <span
+              class="text-white text-lg sm:text-xl font-black tracking-wide -mt-1"
+              style="font-family: 'Montserrat', Arial, sans-serif"
+              >DURAZNO</span
+            >
+          </div>
         </div>
       </div>
-    </div>
-  </header>
+    </header>
 
-  <!-- FORMULARIO -->
-  <main>
-    <section id="inscripcion" class="py-8 px-1 sm:px-4 bg-white/10 rounded-2xl shadow-lg max-w-2xl mx-auto mt-8 mb-8">
-      <form id="form-inscripcion" class="flex flex-col gap-5 bg-white rounded-xl main-card p-4 sm:p-8 shadow-lg max-w-xl mx-auto text-[#1e293b]">
-        <h2 class="text-3xl font-black text-center mb-1 text-[#0F172A] tracking-tight">Ficha de Inscripción</h2>
-        <div class="text-center text-[#64748b] mb-2 text-base">
-          Completá el formulario para comenzar. <span class="block tip">Los datos son <b>confidenciales</b> y solo los usaremos para tu seguridad.</span>
-        </div>
-
-        <!-- DATOS PERSONALES -->
-        <div class="rounded-xl bg-[#f8fafc] border border-slate-200 p-4 flex flex-col gap-2">
-          <h3 class="text-[#E11D48] text-xl font-bold mb-1">Datos personales</h3>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
-            <input name="nombres" placeholder="Nombres *" required class="p-3 rounded border border-slate-200"/>
-            <input name="apellidos" placeholder="Apellidos *" required class="p-3 rounded border border-slate-200"/>
-            <input name="documento" placeholder="Documento (C.I. o Pasaporte) *" required class="p-3 rounded border border-slate-200"/>
-            <input name="fecha_nacimiento" type="date" placeholder="Fecha de Nacimiento *" required class="p-3 rounded border border-slate-200"/>
+    <!-- FORMULARIO -->
+    <main>
+      <section
+        id="inscripcion"
+        class="py-8 px-1 sm:px-4 bg-white/10 rounded-2xl shadow-lg max-w-2xl mx-auto mt-8 mb-8"
+      >
+        <form
+          id="form-inscripcion"
+          class="flex flex-col gap-5 bg-white rounded-xl main-card p-4 sm:p-8 shadow-lg max-w-xl mx-auto text-[#1e293b]"
+        >
+          <h2
+            class="text-3xl font-black text-center mb-1 text-[#0F172A] tracking-tight"
+          >
+            Ficha de Inscripción
+          </h2>
+          <div class="text-center text-[#64748b] mb-2 text-base">
+            Completá el formulario para comenzar.
+            <span class="block tip"
+              >Los datos son <b>confidenciales</b> y solo los usaremos para tu
+              seguridad.</span
+            >
           </div>
-          <input name="direccion" placeholder="Dirección (calle y número) *" required class="p-3 rounded border border-slate-200"/>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
-            <input name="telefono" placeholder="Teléfono (celular) *" required class="p-3 rounded border border-slate-200"/>
-            <input name="contacto_emergencia" placeholder="Contacto de emergencia *" required class="p-3 rounded border border-slate-200"/>
-          </div>
-          <input name="perfil_redes" placeholder="Tu perfil en redes (opcional)" class="p-3 rounded border border-slate-200"/>
-        </div>
 
-        <!-- ACTIVIDAD FÍSICA PREVIA -->
-        <div class="rounded-xl bg-[#f8fafc] border border-slate-200 p-4 flex flex-col gap-2">
-          <h3 class="text-[#E11D48] text-xl font-bold mb-1">Actividad física previa</h3>
-          <div class="flex flex-col gap-1 sm:flex-row sm:items-center">
-            <span>¿Practicás algún deporte?</span>
-            <div class="flex gap-3 mt-1 sm:mt-0">
-              <label class="flex items-center gap-1 font-medium"><input type="radio" name="deporte" value="Sí" required> Sí</label>
-              <label class="flex items-center gap-1 font-medium"><input type="radio" name="deporte" value="No"> No</label>
-              <input name="deporte_cual" placeholder="¿Cuál?" class="p-2 rounded border border-slate-200 ml-2 flex-1 min-w-[90px]"/>
+          <!-- DATOS PERSONALES -->
+          <div
+            class="rounded-xl bg-[#f8fafc] border border-slate-200 p-4 flex flex-col gap-2"
+          >
+            <h3 class="text-[#E11D48] text-xl font-bold mb-1">
+              Datos personales
+            </h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+              <input
+                name="nombres"
+                placeholder="Nombres *"
+                required
+                class="p-3 rounded border border-slate-200"
+              />
+              <input
+                name="apellidos"
+                placeholder="Apellidos *"
+                required
+                class="p-3 rounded border border-slate-200"
+              />
+              <input
+                name="documento"
+                placeholder="Documento (C.I. o Pasaporte) *"
+                required
+                class="p-3 rounded border border-slate-200"
+              />
+              <input
+                name="fecha_nacimiento"
+                type="date"
+                placeholder="Fecha de Nacimiento *"
+                required
+                class="p-3 rounded border border-slate-200"
+              />
+            </div>
+            <input
+              name="direccion"
+              placeholder="Dirección (calle y número) *"
+              required
+              class="p-3 rounded border border-slate-200"
+            />
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+              <input
+                name="telefono"
+                placeholder="Teléfono (celular) *"
+                required
+                class="p-3 rounded border border-slate-200"
+              />
+              <input
+                name="contacto_emergencia"
+                placeholder="Contacto de emergencia *"
+                required
+                class="p-3 rounded border border-slate-200"
+              />
+            </div>
+            <input
+              name="perfil_redes"
+              placeholder="Tu perfil en redes (opcional)"
+              class="p-3 rounded border border-slate-200"
+            />
+          </div>
+
+          <!-- ACTIVIDAD FÍSICA PREVIA -->
+          <div
+            class="rounded-xl bg-[#f8fafc] border border-slate-200 p-4 flex flex-col gap-2"
+          >
+            <h3 class="text-[#E11D48] text-xl font-bold mb-1">
+              Actividad física previa
+            </h3>
+            <div class="flex flex-col gap-1 sm:flex-row sm:items-center">
+              <span>¿Practicás algún deporte?</span>
+              <div class="flex gap-3 mt-1 sm:mt-0">
+                <label class="flex items-center gap-1 font-medium"
+                  ><input type="radio" name="deporte" value="Sí" required />
+                  Sí</label
+                >
+                <label class="flex items-center gap-1 font-medium"
+                  ><input type="radio" name="deporte" value="No" /> No</label
+                >
+                <input
+                  name="deporte_cual"
+                  placeholder="¿Cuál?"
+                  class="p-2 rounded border border-slate-200 ml-2 flex-1 min-w-[90px]"
+                />
+              </div>
+            </div>
+            <div class="flex flex-col gap-1 sm:flex-row sm:items-center">
+              <span>¿Hacés alguna disciplina de fitness?</span>
+              <div class="flex gap-3 mt-1 sm:mt-0">
+                <label class="flex items-center gap-1 font-medium"
+                  ><input type="radio" name="fitness" value="Sí" required />
+                  Sí</label
+                >
+                <label class="flex items-center gap-1 font-medium"
+                  ><input type="radio" name="fitness" value="No" /> No</label
+                >
+                <input
+                  name="fitness_cual"
+                  placeholder="¿Cuál?"
+                  class="p-2 rounded border border-slate-200 ml-2 flex-1 min-w-[90px]"
+                />
+              </div>
             </div>
           </div>
-          <div class="flex flex-col gap-1 sm:flex-row sm:items-center">
-            <span>¿Hacés alguna disciplina de fitness?</span>
-            <div class="flex gap-3 mt-1 sm:mt-0">
-              <label class="flex items-center gap-1 font-medium"><input type="radio" name="fitness" value="Sí" required> Sí</label>
-              <label class="flex items-center gap-1 font-medium"><input type="radio" name="fitness" value="No"> No</label>
-              <input name="fitness_cual" placeholder="¿Cuál?" class="p-2 rounded border border-slate-200 ml-2 flex-1 min-w-[90px]"/>
+
+          <!-- OBJETIVOS -->
+          <div
+            class="rounded-xl bg-[#f8fafc] border border-slate-200 p-4 flex flex-col gap-2"
+          >
+            <h3 class="text-[#E11D48] text-xl font-bold mb-1">
+              ¿Cuál es tu objetivo principal?
+            </h3>
+            <div class="flex flex-wrap gap-4 text-base">
+              <label class="flex items-center gap-1"
+                ><input type="checkbox" name="objetivos" value="Tonificar" />
+                Tonificar</label
+              >
+              <label class="flex items-center gap-1"
+                ><input type="checkbox" name="objetivos" value="Perder peso" />
+                Bajar de peso</label
+              >
+              <label class="flex items-center gap-1"
+                ><input
+                  type="checkbox"
+                  name="objetivos"
+                  value="Rehabilitación"
+                />
+                Rehabilitación</label
+              >
+              <input
+                name="objetivos_otros"
+                placeholder="Otro (¿cuál?)"
+                class="p-2 rounded border border-slate-200 flex-1 min-w-[120px]"
+              />
+            </div>
+            <div class="tip">Podés elegir más de uno.</div>
+          </div>
+
+          <!-- FACTORES DE SALUD -->
+          <div
+            class="rounded-xl bg-[#f8fafc] border border-slate-200 p-4 flex flex-col gap-2"
+          >
+            <h3 class="text-[#E11D48] text-xl font-bold mb-1">
+              Salud y antecedentes
+            </h3>
+            <div
+              class="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2 text-[1em]"
+            >
+              <label class="flex items-center gap-1"
+                ><input type="checkbox" name="cardiovasculares" />
+                Cardiovasculares</label
+              >
+              <label class="flex items-center gap-1"
+                ><input type="checkbox" name="diabetico" /> Diabetes</label
+              >
+              <label class="flex items-center gap-1"
+                ><input type="checkbox" name="asmatico" /> Asma</label
+              >
+              <label class="flex items-center gap-1"
+                ><input type="checkbox" name="fumador" /> Fuma</label
+              >
+              <label class="flex items-center gap-1"
+                ><input type="checkbox" name="epileptico" /> Epilepsia</label
+              >
+              <label class="flex items-center gap-1"
+                ><input type="checkbox" name="hipertension" />
+                Hipertensión</label
+              >
+              <label class="flex items-center gap-1"
+                ><input type="checkbox" name="osteoporosis" />
+                Osteoporosis</label
+              >
+              <label class="flex items-center gap-1"
+                ><input type="checkbox" name="anemia" /> Anemia</label
+              >
+              <label class="flex items-center gap-1"
+                ><input type="checkbox" name="alergias" /> Alergias</label
+              >
+              <input
+                name="factores_salud_otros"
+                placeholder="Otra condición o medicación"
+                class="p-2 rounded border border-slate-200 flex-1 col-span-2"
+              />
+            </div>
+            <div class="tip">
+              Marcá lo que corresponda. Si tenés dudas, consultá a tu médico.
             </div>
           </div>
-        </div>
 
-        <!-- OBJETIVOS -->
-        <div class="rounded-xl bg-[#f8fafc] border border-slate-200 p-4 flex flex-col gap-2">
-          <h3 class="text-[#E11D48] text-xl font-bold mb-1">¿Cuál es tu objetivo principal?</h3>
-          <div class="flex flex-wrap gap-4 text-base">
-            <label class="flex items-center gap-1"><input type="checkbox" name="objetivos" value="Tonificar"> Tonificar</label>
-            <label class="flex items-center gap-1"><input type="checkbox" name="objetivos" value="Perder peso"> Bajar de peso</label>
-            <label class="flex items-center gap-1"><input type="checkbox" name="objetivos" value="Rehabilitación"> Rehabilitación</label>
-            <input name="objetivos_otros" placeholder="Otro (¿cuál?)" class="p-2 rounded border border-slate-200 flex-1 min-w-[120px]"/>
+          <!-- LESIONES PREVIAS -->
+          <div
+            class="rounded-xl bg-[#f8fafc] border border-slate-200 p-4 flex flex-col gap-2"
+          >
+            <h3 class="text-[#E11D48] text-xl font-bold mb-1">
+              ¿Tuviste alguna lesión?
+            </h3>
+            <div
+              class="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2 text-[1em]"
+            >
+              <label class="flex items-center gap-1"
+                ><input type="checkbox" name="lesion_osea" /> Lesión ósea</label
+              >
+              <label class="flex items-center gap-1"
+                ><input type="checkbox" name="lesion_muscular" /> Lesión
+                muscular</label
+              >
+              <label class="flex items-center gap-1"
+                ><input type="checkbox" name="lesion_ligamentos" />
+                Ligamentos</label
+              >
+              <label class="flex items-center gap-1"
+                ><input type="checkbox" name="lesion_tendones" />
+                Tendones</label
+              >
+              <label class="flex items-center gap-1"
+                ><input type="checkbox" name="lesion_meniscos" />
+                Meniscos</label
+              >
+              <label class="flex items-center gap-1"
+                ><input type="checkbox" name="alteracion_columna" />
+                Columna</label
+              >
+              <input
+                name="lesiones_otros"
+                placeholder="Otra lesión"
+                class="p-2 rounded border border-slate-200 flex-1 col-span-2"
+              />
+            </div>
           </div>
-          <div class="tip">Podés elegir más de uno.</div>
-        </div>
 
-        <!-- FACTORES DE SALUD -->
-        <div class="rounded-xl bg-[#f8fafc] border border-slate-200 p-4 flex flex-col gap-2">
-          <h3 class="text-[#E11D48] text-xl font-bold mb-1">Salud y antecedentes</h3>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2 text-[1em]">
-            <label class="flex items-center gap-1"><input type="checkbox" name="cardiovasculares"> Cardiovasculares</label>
-            <label class="flex items-center gap-1"><input type="checkbox" name="diabetico"> Diabetes</label>
-            <label class="flex items-center gap-1"><input type="checkbox" name="asmatico"> Asma</label>
-            <label class="flex items-center gap-1"><input type="checkbox" name="fumador"> Fuma</label>
-            <label class="flex items-center gap-1"><input type="checkbox" name="epileptico"> Epilepsia</label>
-            <label class="flex items-center gap-1"><input type="checkbox" name="hipertension"> Hipertensión</label>
-            <label class="flex items-center gap-1"><input type="checkbox" name="osteoporosis"> Osteoporosis</label>
-            <label class="flex items-center gap-1"><input type="checkbox" name="anemia"> Anemia</label>
-            <label class="flex items-center gap-1"><input type="checkbox" name="alergias"> Alergias</label>
-            <input name="factores_salud_otros" placeholder="Otra condición o medicación" class="p-2 rounded border border-slate-200 flex-1 col-span-2"/>
+          <!-- SÍNTOMAS AL ESFUERZO -->
+          <div
+            class="rounded-xl bg-[#f8fafc] border border-slate-200 p-4 flex flex-col gap-2"
+          >
+            <h3 class="text-[#E11D48] text-xl font-bold mb-1">
+              Síntomas al ejercitar
+            </h3>
+            <div
+              class="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2 text-[1em]"
+            >
+              <label class="flex items-center gap-1"
+                ><input type="checkbox" name="mareos" /> Mareos</label
+              >
+              <label class="flex items-center gap-1"
+                ><input type="checkbox" name="nauseas" /> Náuseas</label
+              >
+              <label class="flex items-center gap-1"
+                ><input type="checkbox" name="desmayos" /> Desmayos</label
+              >
+              <label class="flex items-center gap-1"
+                ><input type="checkbox" name="dificultad_respirar" /> Dificultad
+                al respirar</label
+              >
+            </div>
+            <div class="tip">
+              Si alguna vez sentiste alguno, marcá la opción.
+            </div>
           </div>
-          <div class="tip">Marcá lo que corresponda. Si tenés dudas, consultá a tu médico.</div>
-        </div>
 
-        <!-- LESIONES PREVIAS -->
-        <div class="rounded-xl bg-[#f8fafc] border border-slate-200 p-4 flex flex-col gap-2">
-          <h3 class="text-[#E11D48] text-xl font-bold mb-1">¿Tuviste alguna lesión?</h3>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2 text-[1em]">
-            <label class="flex items-center gap-1"><input type="checkbox" name="lesion_osea"> Lesión ósea</label>
-            <label class="flex items-center gap-1"><input type="checkbox" name="lesion_muscular"> Lesión muscular</label>
-            <label class="flex items-center gap-1"><input type="checkbox" name="lesion_ligamentos"> Ligamentos</label>
-            <label class="flex items-center gap-1"><input type="checkbox" name="lesion_tendones"> Tendones</label>
-            <label class="flex items-center gap-1"><input type="checkbox" name="lesion_meniscos"> Meniscos</label>
-            <label class="flex items-center gap-1"><input type="checkbox" name="alteracion_columna"> Columna</label>
-            <input name="lesiones_otros" placeholder="Otra lesión" class="p-2 rounded border border-slate-200 flex-1 col-span-2"/>
+          <!-- DECLARACIÓN -->
+          <div
+            class="bg-blue-50 p-3 rounded border border-blue-200 mt-2 text-xs text-blue-900"
+          >
+            <b>Aclaración:</b>
+            <ul class="list-disc list-inside mt-1">
+              <li>
+                Los datos permiten adaptar tu entrenamiento a tus necesidades y
+                cuidar tu salud.
+              </li>
+              <li>Declarás que todo lo completado es real y correcto.</li>
+              <li>La firma se solicita en persona cuando vengas.</li>
+            </ul>
           </div>
-        </div>
+          <button
+            type="submit"
+            class="bg-[#E11D48] text-white rounded-xl py-3 px-6 font-bold hover:bg-[#be1740] transition mt-2 text-lg shadow-lg"
+          >
+            Enviar inscripción por WhatsApp
+          </button>
+        </form>
+      </section>
+    </main>
 
-        <!-- SÍNTOMAS AL ESFUERZO -->
-        <div class="rounded-xl bg-[#f8fafc] border border-slate-200 p-4 flex flex-col gap-2">
-          <h3 class="text-[#E11D48] text-xl font-bold mb-1">Síntomas al ejercitar</h3>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2 text-[1em]">
-            <label class="flex items-center gap-1"><input type="checkbox" name="mareos"> Mareos</label>
-            <label class="flex items-center gap-1"><input type="checkbox" name="nauseas"> Náuseas</label>
-            <label class="flex items-center gap-1"><input type="checkbox" name="desmayos"> Desmayos</label>
-            <label class="flex items-center gap-1"><input type="checkbox" name="dificultad_respirar"> Dificultad al respirar</label>
-          </div>
-          <div class="tip">Si alguna vez sentiste alguno, marcá la opción.</div>
-        </div>
+    <!-- JS para envío a WhatsApp -->
+    <script>
+      document
+        .getElementById("form-inscripcion")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          const f = this;
+          function check(name) {
+            return f[name] && f[name].checked;
+          }
+          function getChecks(names) {
+            return (
+              names
+                .filter((n) => check(n))
+                .map((n) => f[n].parentNode.textContent.trim())
+                .join(", ") || "Ninguno"
+            );
+          }
 
-        <!-- DECLARACIÓN -->
-        <div class="bg-blue-50 p-3 rounded border border-blue-200 mt-2 text-xs text-blue-900">
-          <b>Aclaración:</b>
-          <ul class="list-disc list-inside mt-1">
-            <li>Los datos permiten adaptar tu entrenamiento a tus necesidades y cuidar tu salud.</li>
-            <li>Declarás que todo lo completado es real y correcto.</li>
-            <li>La firma se solicita en persona cuando vengas.</li>
-          </ul>
-        </div>
-        <button type="submit" class="bg-[#E11D48] text-white rounded-xl py-3 px-6 font-bold hover:bg-[#be1740] transition mt-2 text-lg shadow-lg">
-          Enviar inscripción por WhatsApp
-        </button>
-      </form>
-    </section>
-  </main>
+          let msg = "*FICHA DE INSCRIPCIÓN - ACTITUD FITNESS*%0A";
+          msg += `*Nombre:* ${encodeURIComponent(f.nombres.value)}%0A`;
+          msg += `*Apellido:* ${encodeURIComponent(f.apellidos.value)}%0A`;
+          msg += `*Documento:* ${encodeURIComponent(f.documento.value)}%0A`;
+          msg += `*Fecha de nacimiento:* ${encodeURIComponent(
+            f.fecha_nacimiento.value.split("-").reverse().join("/")
+          )}%0A`;
+          msg += `*Dirección:* ${encodeURIComponent(f.direccion.value)}%0A`;
+          msg += `*Teléfono:* ${encodeURIComponent(f.telefono.value)}%0A`;
+          msg += `*Contacto emergencia:* ${encodeURIComponent(
+            f.contacto_emergencia.value
+          )}%0A`;
+          if (f.perfil_redes.value)
+            msg += `*Perfil redes:* ${encodeURIComponent(
+              f.perfil_redes.value
+            )}%0A`;
 
-  <!-- JS para envío a WhatsApp -->
-  <script>
-    document.getElementById("form-inscripcion").addEventListener("submit", function (e) {
-      e.preventDefault();
-      const f = this;
-      function check(name) { return f[name] && f[name].checked; }
-      function getChecks(names) { return names.filter(n => check(n)).map(n => f[n].parentNode.textContent.trim()).join(', ') || 'Ninguno'; }
+          msg += `%0A*ACTIVIDAD FÍSICA PREVIA*%0A`;
+          msg += `¿Deporte?: *${f.deporte.value || ""}* `;
+          if (f.deporte_cual.value)
+            msg += `- ${encodeURIComponent(f.deporte_cual.value)}`;
+          msg += `%0A¿Disciplina fitness?: *${f.fitness.value || ""}* `;
+          if (f.fitness_cual.value)
+            msg += `- ${encodeURIComponent(f.fitness_cual.value)}`;
+          msg += `%0A`;
 
-      let msg = "*FICHA DE INSCRIPCIÓN - ACTITUD FITNESS*%0A";
-      msg += `*Nombre:* ${encodeURIComponent(f.nombres.value)}%0A`;
-      msg += `*Apellido:* ${encodeURIComponent(f.apellidos.value)}%0A`;
-      msg += `*Documento:* ${encodeURIComponent(f.documento.value)}%0A`;
-      msg += `*Fecha de nacimiento:* ${encodeURIComponent(f.fecha_nacimiento.value.split('-').reverse().join('/'))}%0A`;
-      msg += `*Dirección:* ${encodeURIComponent(f.direccion.value)}%0A`;
-      msg += `*Teléfono:* ${encodeURIComponent(f.telefono.value)}%0A`;
-      msg += `*Contacto emergencia:* ${encodeURIComponent(f.contacto_emergencia.value)}%0A`;
-      if (f.perfil_redes.value) msg += `*Perfil redes:* ${encodeURIComponent(f.perfil_redes.value)}%0A`;
+          msg += `%0A*Objetivos:* `;
+          let obj = [];
+          f.querySelectorAll("input[name='objetivos']:checked").forEach((i) =>
+            obj.push(i.value)
+          );
+          if (f.objetivos_otros.value) obj.push(f.objetivos_otros.value);
+          msg += obj.length ? obj.join(", ") : "Ninguno";
+          msg += `%0A`;
 
-      msg += `%0A*ACTIVIDAD FÍSICA PREVIA*%0A`;
-      msg += `¿Deporte?: *${f.deporte.value || ''}* `;
-      if (f.deporte_cual.value) msg += `- ${encodeURIComponent(f.deporte_cual.value)}`;
-      msg += `%0A¿Disciplina fitness?: *${f.fitness.value || ''}* `;
-      if (f.fitness_cual.value) msg += `- ${encodeURIComponent(f.fitness_cual.value)}`;
-      msg += `%0A`;
+          msg += `%0A*Factores de salud:* `;
+          msg += getChecks([
+            "cardiovasculares",
+            "diabetico",
+            "asmatico",
+            "fumador",
+            "epileptico",
+            "hipertension",
+            "osteoporosis",
+            "anemia",
+            "alergias",
+          ]);
+          if (f.factores_salud_otros.value)
+            msg += `, ${encodeURIComponent(f.factores_salud_otros.value)}`;
+          msg += `%0A`;
 
-      msg += `%0A*Objetivos:* `;
-      let obj = [];
-      f.querySelectorAll("input[name='objetivos']:checked").forEach(i=>obj.push(i.value));
-      if (f.objetivos_otros.value) obj.push(f.objetivos_otros.value);
-      msg += obj.length ? obj.join(', ') : 'Ninguno';
-      msg += `%0A`;
+          msg += `%0A*Lesiones previas:* `;
+          msg += getChecks([
+            "lesion_osea",
+            "lesion_muscular",
+            "lesion_ligamentos",
+            "lesion_tendones",
+            "lesion_meniscos",
+            "alteracion_columna",
+          ]);
+          if (f.lesiones_otros.value)
+            msg += `, ${encodeURIComponent(f.lesiones_otros.value)}`;
+          msg += `%0A`;
 
-      msg += `%0A*Factores de salud:* `;
-      msg += getChecks(['cardiovasculares','diabetico','asmatico','fumador','epileptico','hipertension','osteoporosis','anemia','alergias']);
-      if (f.factores_salud_otros.value) msg += `, ${encodeURIComponent(f.factores_salud_otros.value)}`;
-      msg += `%0A`;
+          msg += `%0A*Síntomas al esfuerzo:* `;
+          msg += getChecks([
+            "mareos",
+            "nauseas",
+            "desmayos",
+            "dificultad_respirar",
+          ]);
+          msg += `%0A`;
 
-      msg += `%0A*Lesiones previas:* `;
-      msg += getChecks(['lesion_osea','lesion_muscular','lesion_ligamentos','lesion_tendones','lesion_meniscos','alteracion_columna']);
-      if (f.lesiones_otros.value) msg += `, ${encodeURIComponent(f.lesiones_otros.value)}`;
-      msg += `%0A`;
+          msg += `%0A*Declaración aceptada.*`;
 
-      msg += `%0A*Síntomas al esfuerzo:* `;
-      msg += getChecks(['mareos','nauseas','desmayos','dificultad_respirar']);
-      msg += `%0A`;
-
-      msg += `%0A*Declaración aceptada.*`;
-
-      window.open(`https://wa.me/59896401296?text=${msg}`, "_blank");
-    });
-  </script>
-</body>
+          window.open(`https://wa.me/59896401296?text=${msg}`, "_blank");
+        });
+    </script>
+  </body>
 </html>
